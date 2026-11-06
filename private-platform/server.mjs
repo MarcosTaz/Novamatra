@@ -9,6 +9,7 @@ import {randomSecret,digest,safeCompare,protectPassword,checkPassword,escapeHTML
 const BASE=dirname(fileURLToPath(import.meta.url));
 const OWNER_EMAIL=process.env.OWNER_EMAIL || 'owner@invalid.local';
 const SETUP_TOKEN=process.env.SETUP_TOKEN || '';
+const DB_READY=Boolean(process.env.DATABASE_URL);
 const COOKIE='__Host-nm_session';
 const STATUS=['Investigação','Desenvolvimento','Engenharia / testes pendentes','Validação','Em pausa','Concluído','Arquivado'];
 const PRIORITIES=['Baixa','Normal','Alta','Crítica'];
@@ -46,7 +47,8 @@ function introductory(){return `<section class="hero" aria-labelledby="intro-tit
 app.get('/',(req,res)=>res.send(page('Limiar',introductory(),{},'<script src="/assets/intro.js" defer></script>')));
 app.get('/sobre',(req,res)=>res.send(page('Manifesto',`<div class="wrap"><div class="eyebrow">A INSTITUIÇÃO</div><div class="page-head"><h1>Investigar não é anunciar. É demonstrar.</h1><p class="lead">NOVAMATRA cruza disciplinas, engenharia e sistemas experimentais. Cada projeto distingue hipóteses, protótipos e resultados medidos. A apresentação dos projetos requer uma credencial de acesso.</p></div><div class="actions"><a class="btn" href="/acesso">Entrar na investigação</a><a class="btn outline" href="/">Voltar à apresentação</a></div></div>`)));
 app.get('/robots.txt',(req,res)=>res.type('text/plain').send('User-agent: *\nDisallow: /projetos\nDisallow: /admin\nDisallow: /inicializar\n'));
-app.get('/health',wrap(async(req,res)=>{await query('SELECT 1');res.json({status:'ok',service:'novamatra-private-portal',configured:!!(await owner())})}));
+app.get('/health',wrap(async(req,res)=>{if(!DB_READY)return res.status(503).json({status:'setup_required',service:'novamatra-private-portal'});await query('SELECT 1');res.json({status:'ok',service:'novamatra-private-portal',configured:!!(await owner())})}));
+app.use((req,res,next)=>{if(DB_READY)return next();res.status(503).send(page('Portal em configuração',`<div class="wrap"><div class="eyebrow">ÁREA PRIVADA / PROTEÇÃO ATIVA</div><div class="page-head"><h1>Acesso em preparação.</h1><p class="lead">A apresentação de projetos e a administração só serão ativadas quando a ligação segura à base de dados estiver configurada. Nenhuma informação privada está acessível.</p></div><a class="btn" href="/">Voltar à apresentação</a></div>`,req));});
 app.use(wrap(async(req,res,next)=>{req.actor=await session(req);next()}));
 function requireProject(req,res,next){if(!req.actor)return res.redirect(303,'/acesso');next()}
 function requireAdmin(req,res,next){if(!req.actor)return res.redirect(303,'/acesso');if(req.actor.stage!==2)return res.redirect(303,'/admin/entrar');next()}
@@ -102,5 +104,5 @@ app.get('/api/projects',requireProject,wrap(async(req,res)=>{const r=await query
 app.use((req,res)=>res.status(404).send(page('Não encontrado',`<div class="wrap"><h1>404</h1><a href="/" class="btn">Regressar</a></div>`,req)));
 app.use((err,req,res,next)=>{console.error('Request error',err?.code||err?.message||'unexpected');if(res.headersSent)return next(err);res.status(500).send(page('Erro de servidor',`<div class="wrap"><h1>Serviço temporariamente indisponível.</h1><p>Não foram revelados detalhes internos.</p></div>`,req))});
 const PORT=Number(process.env.PORT||8780);
-if(!process.env.DATABASE_URL){console.error('DATABASE_URL is required');process.exit(1)}
-await initialize();app.listen(PORT,'0.0.0.0',()=>console.log(`NOVAMATRA private portal ready :${PORT}`));
+if(DB_READY)await initialize();else console.warn('DATABASE_URL missing: public introduction only; private routes locked');
+app.listen(PORT,'0.0.0.0',()=>console.log(`NOVAMATRA portal listening :${PORT}`));
