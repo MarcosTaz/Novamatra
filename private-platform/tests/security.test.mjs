@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {protectPassword,checkPassword,escapeHTML,safeUrl,slugify,safeCompare,randomSecret,digest} from '../security.mjs';
+test('passphrase hashing and verification (stage 1)',()=>{const p=protectPassword('Esta e uma credencial de projetos muito forte 2026!');assert.notEqual(p.hash,'Esta e uma credencial de projetos muito forte 2026!');assert.equal(checkPassword('Esta e uma credencial de projetos muito forte 2026!',p.salt,p.hash),true);assert.equal(checkPassword('incorrect',p.salt,p.hash),false)});
+test('short password refused',()=>{assert.throws(()=>protectPassword('abc'))});
+test('hashes include unique salt',()=>{const p=protectPassword('Uma Palavra-passe Bastante Segura!');const q=protectPassword('Uma Palavra-passe Bastante Segura!');assert.notEqual(p.salt,q.salt);assert.notEqual(p.hash,q.hash)});
+test('fixed-time comparisons',()=>{assert.equal(safeCompare('abc','abc'),true);assert.equal(safeCompare('abc','abcd'),false)});
+test('escape unsafe project content',()=>{assert.equal(escapeHTML('<script>"&'), '&lt;script&gt;&quot;&amp;')});
+test('only HTTPS references accepted',()=>{assert.equal(safeUrl('javascript:alert(1)'),null);assert.equal(safeUrl('http://example.com'),null);assert.equal(safeUrl('https://example.com/f'),'https://example.com/f')});
+test('slug normalization',()=>{assert.equal(slugify('STERION — Núcleo / CORE'),'sterion-nucleo-core')});
+test('32 random bytes generates 64 hex characters',()=>{assert.match(randomSecret(),/^[0-9a-f]{64}$/)});
+test('session digest is stable',()=>{assert.equal(digest('x'),digest('x'));assert.notEqual(digest('x'),digest('y'))});

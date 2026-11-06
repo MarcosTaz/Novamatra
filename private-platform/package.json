@@ -1,0 +1,24 @@
+{
+  "name": "novamatra-private-portal",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/make-film.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "pg": "^8.16.3"
+  },
+  "optionalDependencies": {
+    "ffmpeg-static": "^5.2.0",
+    "sharp": "^0.34.0"
+  }
+}
