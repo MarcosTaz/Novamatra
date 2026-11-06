@@ -7,7 +7,7 @@ import { query, initialize, pool, audit } from './db.mjs';
 import {randomSecret,digest,safeCompare,protectPassword,checkPassword,escapeHTML as h,safeUrl,slugify} from './security.mjs';
 
 const BASE=dirname(fileURLToPath(import.meta.url));
-const OWNER_EMAIL=process.env.OWNER_EMAIL || 'marcostrigomoutinho@gmail.com';
+const OWNER_EMAIL=process.env.OWNER_EMAIL || 'owner@invalid.local';
 const SETUP_TOKEN=process.env.SETUP_TOKEN || '';
 const COOKIE='__Host-nm_session';
 const STATUS=['Investigação','Desenvolvimento','Engenharia / testes pendentes','Validação','Em pausa','Concluído','Arquivado'];
