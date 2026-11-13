@@ -39,5 +39,33 @@ export async function initialize(){
    ('arcvault-step','ARCVAULT STEP','Estudo de recuperação de energia associada à marcha.','Objetivos de potência ainda não demonstrados fisicamente.','Investigação','Energia','Normal'),
    ('novamatra-c4','NOVAMATRA C4','Investigação de suspensão automóvel ativa com quatro apoios coordenados.','Conceito em investigação: estabilização inercial da carroçaria, comparação controlada com sistemas de referência e avaliação de aderência, limites físicos e energia. Modelo computacional inicial disponível; não existem protótipo físico, ensaios em estrada, homologação ou vantagem industrial demonstrada. Analisar anterioridade e propriedade intelectual antes de qualquer divulgação técnica diferenciadora.','Investigação','Mobilidade automóvel','Alta')
    ON CONFLICT(slug) DO NOTHING`);
+  // DECREIA: projeto de investigação autónomo; a inicialização é idempotente.
+  await query(`INSERT INTO nm_projects(slug,title,summary,details,status,track,priority)
+    VALUES ('decreia','DECREIA / OMNI-25','Investigação científica computacional: motores independentes, contratos I/O auditáveis e governação rigorosa da evidência.','Projeto autónomo da NOVAMATRA. 25 componentes oficiais: 24 posições de motores científicos e 1 coordenador (CENTRO_CONTROLO_SAUDE_GLOBAL). Estado forense G3.9: 3 componentes com funções técnicas executadas em casos sintéticos (MAC, MPCVG, NCLE); 6 com código algorítmico identificado e integração pendente (ONE_HEALTH, GAIA_ECOPATHOLOGY, SYNAPSE, NEXUS, OMNI_EXODUS, ECOLOGIA); 5 com fonte ou identidade pendente de reconciliação (ATLAS_HUMANO, AETHER_NEXUS, GENOMICA, EPIDEMIOLOGIA, FONTES_GLOBAIS); 10 sem implementação autónoma demonstrada nas fontes examinadas. Próximo marco G4.0: autenticação e auditoria de DNA_ATLAS como candidato de GENOMICA, sem presumir equivalência. Nenhum resultado demonstra uso clínico, descoberta médica ou 25 execuções científicas. Motores autónomos, contratos I/O isolados, código original intocado, hashes SHA-256, rastreabilidade; sem fusão e sem aprovação fictícia.','Investigação','Saúde computacional e evidência científica','Alta') ON CONFLICT(slug) DO NOTHING`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','Evidência técnica confirmada (âmbito limitado)','MAC, MPCVG e NCLE: funções originais executadas sobre entradas sintéticas em G3.5. Isto não é validação clínica, científica geral nem execução conjunta dos 25 motores.','Concluído' FROM nm_projects p
+    WHERE p.slug='decreia' AND NOT EXISTS
+      (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='Evidência técnica confirmada (âmbito limitado)')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','Seis ligações algorítmicas em verificação','ONE_HEALTH, GAIA_ECOPATHOLOGY, SYNAPSE, NEXUS, OMNI_EXODUS e ECOLOGIA têm código identificado; os adaptadores foram preparados, mas os testes de execução conjunta permanecem pendentes.','Em validação' FROM nm_projects p
+    WHERE p.slug='decreia' AND NOT EXISTS
+      (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='Seis ligações algorítmicas em verificação')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','Reconciliação de identidade e fontes','ATLAS_HUMANO, AETHER_NEXUS, GENOMICA, EPIDEMIOLOGIA e FONTES_GLOBAIS: confirmar correspondência, autoria técnica, dependências e autonomia. Não atribuir código apenas por correspondência textual.','Aberto' FROM nm_projects p
+    WHERE p.slug='decreia' AND NOT EXISTS
+      (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='Reconciliação de identidade e fontes')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','Recuperar dez núcleos científicos em falta','EPIGENOMICA, VETERINARIA, TOXICOLOGIA, IMUNOLOGIA, MICROBIOLOGIA, NEUROCIENCIAS, CLIMA, OCEANOGRAFIA, FARMACOLOGIA e BIOESTATISTICA: ainda sem implementação independente demonstrada nas fontes recuperadas.','Aberto' FROM nm_projects p
+    WHERE p.slug='decreia' AND NOT EXISTS
+      (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='Recuperar dez núcleos científicos em falta')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','Centro de Controlo de Saúde Global','Coordenador dos 25 componentes: registo, qualidade, proveniência, contratos I/O e auditoria. Nunca contabilizar como um novo motor científico.','Concluído' FROM nm_projects p
+    WHERE p.slug='decreia' AND NOT EXISTS
+      (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='Centro de Controlo de Saúde Global')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','G4.0 — GENOMICA / DNA_ATLAS','Auditar engine.py, patterns.py, triage.py, replay.py e external.py por SHA-256, dependências e identidade. Ativar ligação OMNI-25 apenas após prova de código independente, contrato I/O, execução real e resultados auditáveis.','Aberto' FROM nm_projects p
+    WHERE p.slug='decreia' AND NOT EXISTS
+      (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G4.0 — GENOMICA / DNA_ATLAS')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
