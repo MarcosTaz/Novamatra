@@ -1,0 +1,41 @@
+{
+  "project": "DECREIA",
+  "phase": "G4.2",
+  "date": "2026-11-13",
+  "slot": "GENOMICA",
+  "source": "DNA_ATLAS",
+  "source_identity": "DERKEIA/2.0.0-research",
+  "staging_path": "C:\\DECREIA\\OMNI_STAGING\\GENOMICA",
+  "local_synthetic_run": {
+    "records": 12,
+    "verified_replays": 12,
+    "original_functions": [
+      "engine.analyze_one",
+      "replay.reconstruct",
+      "replay.digest"
+    ]
+  },
+  "suite": {
+    "tests": 12,
+    "passed": 12,
+    "scope": "local development environment; not Windows acceptance or scientific validity"
+  },
+  "integrity": {
+    "original_modules": 6,
+    "sha256_verified": 6,
+    "contract_json": true,
+    "audit_receipt_sha256": true
+  },
+  "known_defects": [
+    "F01",
+    "F02",
+    "F03",
+    "F04",
+    "F05"
+  ],
+  "official_omni25_integration": "NOT_APPROVED",
+  "genomica_identity": "PENDING",
+  "clinical_use": "NOT_APPROVED",
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "original_code_published": false
+}
