@@ -1,0 +1,27 @@
+{
+  "registry": "REG-2026-11-13-009",
+  "evaluation": "SOFTWARE_AUDIT_ONLY",
+  "hardware_evidence_count": 0,
+  "P1_release": "BLOCKED",
+  "legacy_originals_modified": false,
+  "regressions": {
+    "software_v06_passed": 125,
+    "traceable_v09_passed": 58,
+    "js_v02_assertions_passed": 9025,
+    "external_tests_v06_passed": 13,
+    "external_tests_v09_passed": 9,
+    "replay_synthetic_frames": 4,
+    "replay_abstentions": 4,
+    "replay_guidance_authorizations": 0
+  },
+  "requirements": {
+    "REQ-SF-01": "NOT_PHYSICALLY_VERIFIED",
+    "REQ-SF-02": "NOT_PHYSICALLY_VERIFIED",
+    "REQ-SF-03": "NOT_PHYSICALLY_VERIFIED",
+    "REQ-SF-04": "NOT_PHYSICALLY_VERIFIED",
+    "REQ-SF-05": "NOT_PHYSICALLY_VERIFIED",
+    "REQ-SF-06": "NOT_PHYSICALLY_VERIFIED",
+    "REQ-SF-07": "NOT_PHYSICALLY_VERIFIED",
+    "REQ-SF-08": "NOT_PHYSICALLY_VERIFIED"
+  }
+}
