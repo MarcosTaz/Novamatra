@@ -1,0 +1,3 @@
+# Bíblia COPILOT 360 — adenda V2.2, REG-012
+
+2026-11-13. Auditoria de veto causal, teste de relógio ARTIFICIALMENTE verificado para fins de isolamento, não físico. REG-010 26 PASS, REG-012 15 PASS; 15 fixtures, 14 vetos, 1 advisory. Código real do planeador V06 e SensorHub/replay V09 foi executado sem alterações aos ZIPs originais. Replay quatro frames sintéticos, quatro ABSTAIN, zero autorizações. Nenhuma evidência física de bancada. Bíblia cumulativa, hashes e logs entregues em pacote técnico privado; não publicados no repositório público. P1 bloqueado. Consultar REG012_INDEPENDENT_VETO_AUDIT.md.
