@@ -1,0 +1,16 @@
+{
+  "registry": "REG-2026-11-13-012",
+  "date": "2026-11-13",
+  "python_tests_reg010_pass": 26,
+  "python_tests_reg012_pass": 15,
+  "causal_cases": 15,
+  "causal_veto_cases": 14,
+  "advisory_only_cases": 1,
+  "v09_synthetic_frames": 4,
+  "v09_abstentions": 4,
+  "physical_clock_verified": false,
+  "physical_audio_tested": false,
+  "originals_modified": false,
+  "real_world_authorizations": 0,
+  "p1_release": "BLOCKED"
+}
