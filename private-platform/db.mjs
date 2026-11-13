@@ -36,7 +36,8 @@ export async function initialize(){
    ('sterion-core','STERION CORE','Câmara de tratamento fechada de calçado.','Geometria experimental V0.9 e auditoria REV10; processo antimicrobiano ainda por demonstrar.','Engenharia / testes pendentes','Descontaminação','Alta'),
    ('sterion-insert','STERION INSERT','Dois insertos compactos e base externa comum.','REV11 P1-M0: STEP/STL experimentais e 18 fixações modeladas; tratamento não validado.','Engenharia / testes pendentes','Descontaminação','Alta'),
    ('scan2cnc','SCAN2CNC','Digitalização espacial e fabrico modular.','Sistema próprio do grupo NOVAMATRA; grua/gantry modular de estrutura imprimível em 3D.','Desenvolvimento','Fabricação','Alta'),
-   ('arcvault-step','ARCVAULT STEP','Estudo de recuperação de energia associada à marcha.','Objetivos de potência ainda não demonstrados fisicamente.','Investigação','Energia','Normal')
+   ('arcvault-step','ARCVAULT STEP','Estudo de recuperação de energia associada à marcha.','Objetivos de potência ainda não demonstrados fisicamente.','Investigação','Energia','Normal'),
+   ('novamatra-c4','NOVAMATRA C4','Investigação de suspensão automóvel ativa com quatro apoios coordenados.','Conceito em investigação: estabilização inercial da carroçaria, comparação controlada com sistemas de referência e avaliação de aderência, limites físicos e energia. Modelo computacional inicial disponível; não existem protótipo físico, ensaios em estrada, homologação ou vantagem industrial demonstrada. Analisar anterioridade e propriedade intelectual antes de qualquer divulgação técnica diferenciadora.','Investigação','Mobilidade automóvel','Alta')
    ON CONFLICT(slug) DO NOTHING`);
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
