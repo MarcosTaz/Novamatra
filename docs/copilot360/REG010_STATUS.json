@@ -1,0 +1,19 @@
+{
+  "registry": "REG-2026-11-13-010",
+  "date": "2026-11-13",
+  "type": "isolated_contract_sandbox",
+  "python_tests_pass": 26,
+  "deterministic_replay_cases": 9,
+  "deterministic_replay_vetoes": 9,
+  "real_world_authorizations": 0,
+  "physical_tests": 0,
+  "source_engine_mutations": 0,
+  "legacy_engines_executed_in_new_harness": false,
+  "github_contains_runnable_sandbox": false,
+  "phase_A": "ISOLATED_PASS",
+  "phase_B": "PARTIAL",
+  "phase_C": "PARTIAL",
+  "phase_D": "BLOCKED",
+  "hardware_purchase": "NOT_AUTHORIZED",
+  "p1_release": "BLOCKED"
+}
