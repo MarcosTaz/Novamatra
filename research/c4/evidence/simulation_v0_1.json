@@ -1,0 +1,36 @@
+{
+  "model": "linear seven DOF small displacement",
+  "status": "SIMULATION_ONLY",
+  "reference": "passive",
+  "scenario": "separate smooth bumps on left and right; 10 m/s",
+  "limitations": [
+    "no tyre-lift",
+    "no measured actuator electricity",
+    "no actuator temperature or sensor latency",
+    "no homologation",
+    "no physical prototype"
+  ],
+  "parameters": {
+    "sprung_mass_kg": 1300,
+    "unsprung_mass_per_corner_kg": 45,
+    "velocity_m_s": 10,
+    "timestep_s": 0.001,
+    "duration_s": 3
+  },
+  "passive": {
+    "heave_accel_rms_m_s2": 0.6073449578647863,
+    "roll_rms_deg": 0.09497187418465873,
+    "pitch_rms_deg": 0.054884302328871586,
+    "actuator_mechanical_work_abs_J": 0,
+    "peak_actuator_force_N": 0,
+    "peak_tyre_force_variation_N": 5965.313880112286
+  },
+  "c4": {
+    "heave_accel_rms_m_s2": 0.608955094974551,
+    "roll_rms_deg": 0.06556694447552013,
+    "pitch_rms_deg": 0.04740778697121094,
+    "actuator_mechanical_work_abs_J": 69.80781290576188,
+    "peak_actuator_force_N": 342.58169495427785,
+    "peak_tyre_force_variation_N": 6242.122135050941
+  }
+}
