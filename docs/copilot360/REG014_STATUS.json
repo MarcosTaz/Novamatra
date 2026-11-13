@@ -1,0 +1,10 @@
+{
+  "registry": "REG-2026-11-13-014",
+  "tests_pass": 18,
+  "tests_total": 18,
+  "synthetic_only": true,
+  "physical_calibration_verified": false,
+  "annotated_negative_obstacle_or_glass_dataset": false,
+  "p1_release": "BLOCKED",
+  "hardware_purchase": "NOT_AUTHORIZED"
+}
