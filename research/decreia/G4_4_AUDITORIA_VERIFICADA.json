@@ -1,0 +1,47 @@
+{
+  "phase": "G4.4",
+  "date": "2026-11-13",
+  "project": "DECREIA",
+  "audit_source": "DECREIA_G4_4_REFSEQ_RESULTADOS_G4_4_REFSEQ_20261113_210525_b5d1ee.zip",
+  "report_sha256": "f8f5f5adf569ae8c9dbdc51f81d71e8a5dcf2e637c36f366b25a4fecf86a53d8",
+  "summary_sha256": "d652e4f7fb8d1c8ba4c1fb16b26b6581b40370781eb97845f7cce4743c2a4244",
+  "source_original_hash_matches": 6,
+  "source_patch_hash_matches": 6,
+  "references": [
+    {
+      "accession": "NC_012920.1",
+      "length": 16569,
+      "gap_3107": "N",
+      "sequence_sha256": "f156ff3f65bbcc80c7ebb9936dceb96b1477b4f8f535c4e1dbe7baea225cbc66"
+    },
+    {
+      "accession": "NM_000546.6",
+      "cds_length": 1182,
+      "cds_start": 143,
+      "cds_end": 1324,
+      "cds_sequence_sha256": "828a93ac94731fa87ba0d1f085879938f5425efd2b030f8476575dfb0d914f79"
+    }
+  ],
+  "synthetic_variants": {
+    "mtDNA": 38,
+    "TP53": 12,
+    "synthetic_constructs": 6,
+    "total": 56
+  },
+  "independent_local_reproduction": {
+    "original_G43_patched_code": true,
+    "reference_artifacts_recreated": true,
+    "exit_code": 0,
+    "stdout_byte_equal": true,
+    "summary_equal_except": [
+      "timestamp_utc",
+      "elapsed_seconds"
+    ]
+  },
+  "external_sequence_signature_verified": false,
+  "genomica_identity": "PENDING",
+  "omni25_integration": "NOT_PROMOTED",
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "clinical_use": "NOT_APPROVED",
+  "code_published": false
+}
