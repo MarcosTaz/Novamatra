@@ -1,0 +1,40 @@
+{
+  "project": "DECREIA",
+  "phase": "G4.3",
+  "date": "2026-11-13",
+  "name": "DNA_ATLAS",
+  "slot": "GENOMICA",
+  "windows_g42_receipts": {
+    "zip_sha256_source_file": "DECREIA_G4_2_RECIBOS_WINDOWS_40a43a861a77.zip",
+    "crc": "PASS",
+    "input_sha256": "6ca50b8938937f9d31932018925c039a4b19d318e4e22fb6874de378499edcec",
+    "audit_sha256": "40a43a861a77b97870b5222813fe75e7ade2604d648e9a2cb517955931582d74",
+    "result_sha256": "40fa0ec599e6289c3dfd5c64711c4ee35b9a93cbf96b77075ae044cafdde4a97",
+    "synthetic_rows_reproduced": 12,
+    "byte_identical_to_installer_PROVA_LOCAL": true,
+    "machine_provenance_independently_attested": false
+  },
+  "g43_development": {
+    "corrected_files_separate_from_origins": true,
+    "regression_tests_passed": 15,
+    "regression_tests_total": 15,
+    "synthetic_pipeline_replays": 56,
+    "known_issues_locally_patched": [
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05"
+    ],
+    "installer_temporary_staging_test": "PASS",
+    "tampered_g42_contract_rejected": "PASS",
+    "windows_g43_receipt_received": false
+  },
+  "original_sha256_unchanged": true,
+  "identity": "PENDING",
+  "real_references": "NOT_VALIDATED",
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "clinical_use": "NOT_APPROVED",
+  "omni25_promotion": "NOT_PROMOTED",
+  "public_code_release": false
+}
