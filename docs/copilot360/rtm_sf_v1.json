@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "organization": "NOVAMATRA",
+  "project": "COPILOT 360",
+  "as_of": "2026-11-13",
+  "release_state": "NOT_APPROVED",
+  "requirements": [
+    {
+      "id": "REQ-SF-01",
+      "title": "Tempo total de evasão dinâmica",
+      "severity": 10,
+      "status": "PENDENTE",
+      "test_protocol": "ENS-LAT-01",
+      "proposed_acceptance": "P99 <= 80 ms; frame <=16.6 ms",
+      "evidence_ids": [],
+      "implementation_paths": [],
+      "thresholds_unvalidated": true
+    },
+    {
+      "id": "REQ-SF-02",
+      "title": "Incerteza ativa e falso silêncio",
+      "severity": 10,
+      "status": "HIPOTESE",
+      "test_protocol": "ENS-UNC-02",
+      "proposed_acceptance": "Alerta <=150 ms; confiança <65%",
+      "evidence_ids": [],
+      "implementation_paths": [],
+      "thresholds_unvalidated": true
+    },
+    {
+      "id": "REQ-SF-03",
+      "title": "Desníveis negativos",
+      "severity": 10,
+      "status": "PENDENTE",
+      "test_protocol": "ENS-GND-03",
+      "proposed_acceptance": "FN=0% na amostra; >=1.5m",
+      "evidence_ids": [],
+      "implementation_paths": [],
+      "thresholds_unvalidated": true
+    },
+    {
+      "id": "REQ-SF-04",
+      "title": "Vidro e superfícies especulares",
+      "severity": 9,
+      "status": "PENDENTE",
+      "test_protocol": "ENS-GLS-04",
+      "proposed_acceptance": ">=98% a >=1.2m",
+      "evidence_ids": [],
+      "implementation_paths": [],
+      "thresholds_unvalidated": true
+    },
+    {
+      "id": "REQ-SF-05",
+      "title": "Temperatura de contacto cutâneo",
+      "severity": 9,
+      "status": "PENDENTE",
+      "test_protocol": "ENS-THM-05",
+      "proposed_acceptance": "<=41°C; corte a 39.5°C",
+      "evidence_ids": [],
+      "implementation_paths": [],
+      "thresholds_unvalidated": true
+    },
+    {
+      "id": "REQ-SF-06",
+      "title": "Thermal throttling",
+      "severity": 9,
+      "status": "HIPOTESE",
+      "test_protocol": "ENS-CPU-06",
+      "proposed_acceptance": ">=20 fps; gaps <=100ms",
+      "evidence_ids": [],
+      "implementation_paths": [],
+      "thresholds_unvalidated": true
+    },
+    {
+      "id": "REQ-SF-07",
+      "title": "Falha de ligação USB-C",
+      "severity": 9,
+      "status": "PENDENTE",
+      "test_protocol": "ENS-USB-07",
+      "proposed_acceptance": "Alerta local <=50ms",
+      "evidence_ids": [],
+      "implementation_paths": [],
+      "thresholds_unvalidated": true
+    },
+    {
+      "id": "REQ-SF-08",
+      "title": "Separação IA / supervisor determinístico",
+      "severity": 10,
+      "status": "HIPOTESE",
+      "test_protocol": "ENS-ARC-08",
+      "proposed_acceptance": "Sem permissões de controlo IA",
+      "evidence_ids": [],
+      "implementation_paths": [],
+      "thresholds_unvalidated": true
+    }
+  ]
+}
