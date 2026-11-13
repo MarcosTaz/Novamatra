@@ -1,0 +1,50 @@
+{
+  "project": "DECREIA",
+  "phase": "G4.5",
+  "bible": "0033",
+  "date": "2026-11-13",
+  "archive": "DECREIA_G4_5_RESULTADOS_SOMBRA_e13de210dcc1.zip",
+  "archive_sha256": "a1d5ca7f18f69b4f7b007835a785b89cb0482dd5bdc1fa93fda27cedca9782ce",
+  "independent_receipt_integrity_checks": {
+    "passed": 21,
+    "total": 21
+  },
+  "file_sha256_receipts": {
+    "passed": 10,
+    "total": 10
+  },
+  "original_coordinator_from_G35_verified_against_distribution": true,
+  "original_genomica_adapter_verified_against_distribution": true,
+  "positive_counts": {
+    "EXECUTED": 4,
+    "BLOCKED": 21,
+    "ABSTAINED": 0,
+    "FAILED": 0,
+    "REJECTED": 0
+  },
+  "abstention_counts": {
+    "EXECUTED": 3,
+    "ABSTAINED": 1,
+    "BLOCKED": 21,
+    "FAILED": 0,
+    "REJECTED": 0
+  },
+  "executed_in_positive_case": [
+    "MAC",
+    "MPCVG",
+    "NCLE",
+    "GENOMICA (alias DNA_ATLAS)"
+  ],
+  "coordinator_catalog_entry": "BLOCKED_NOT_SCIENTIFIC_MOTOR",
+  "synthetic_records_reported": 12,
+  "per_record_results_in_archive": false,
+  "negative_test_transcripts_in_archive": false,
+  "source_bytes_from_windows_in_archive": false,
+  "scope": "G3.5_SHADOW_ONLY",
+  "production_coordinator_version_verified": false,
+  "production_registry_modified": false,
+  "omni25_promotion": "NOT_PROMOTED",
+  "genomica_historical_identity": "PENDING",
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "clinical_use": "NOT_APPROVED"
+}
