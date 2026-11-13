@@ -1,0 +1,17 @@
+{
+  "registry": "REG-2026-11-13-013",
+  "stage": "SOFTWARE_ONLY",
+  "local_tests_pass": 15,
+  "v09_frame_records": 4,
+  "v06_actual_planner_calls": 4,
+  "v09_abstentions": 4,
+  "v06_stop_uncertain": 4,
+  "integration_vetoes": 4,
+  "authorized_motion": 0,
+  "head_body_transform": "SYNTHETIC_MATH_ONLY",
+  "hardware_clock_verified": false,
+  "metric_free_space_verified": false,
+  "originals_modified": false,
+  "p1_release": "BLOCKED",
+  "procurement": "NOT_AUTHORIZED"
+}
