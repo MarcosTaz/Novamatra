@@ -1,0 +1,163 @@
+{
+  "project": "DECREIA",
+  "organization": "NOVAMATRA",
+  "architecture": "OMNI-25",
+  "evidenceBaseline": "G3.9 / Bíblia 0025",
+  "asOf": "2026-11-13",
+  "scope": "Computational science and global health research",
+  "governance": "Autonomous engines, strict I/O contract binding, zero code merging",
+  "scientificValidation": "NOT_DEMONSTRATED",
+  "clinicalUse": "NOT_APPROVED",
+  "components": [
+    {
+      "id": "CENTRO_CONTROLO_SAUDE_GLOBAL",
+      "role": "COORDINATOR",
+      "evidence": "coordinator",
+      "note": "Orquestração e proveniência; não é motor científico"
+    },
+    {
+      "id": "MAC",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "limited_function_executed",
+      "note": "Função de oscilador harmónico executada em ensaio sintético"
+    },
+    {
+      "id": "MPCVG",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "limited_function_executed",
+      "note": "Estimador de Wald executado em ensaio sintético"
+    },
+    {
+      "id": "NCLE",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "limited_function_executed",
+      "note": "Modelo causal estrutural simples executado em ensaio sintético"
+    },
+    {
+      "id": "ONE_HEALTH",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "algorithmic_source_pending_integration",
+      "note": "Alinhamento Smith-Waterman"
+    },
+    {
+      "id": "GAIA_ECOPATHOLOGY",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "algorithmic_source_pending_integration",
+      "note": "Modelos ecológicos / RDP; contrato ainda por validar"
+    },
+    {
+      "id": "SYNAPSE",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "algorithmic_source_pending_integration",
+      "note": "Componentes de modelação / RDP; contrato ainda por validar"
+    },
+    {
+      "id": "NEXUS",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "algorithmic_source_pending_integration",
+      "note": "ScaleInvariantNexusEngine / CVaR; identidade da interface a confirmar"
+    },
+    {
+      "id": "OMNI_EXODUS",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "algorithmic_source_pending_integration",
+      "note": "Dinâmica estocástica; ligação por testar"
+    },
+    {
+      "id": "ECOLOGIA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "algorithmic_source_pending_integration",
+      "note": "Correção FDR; ligação por testar"
+    },
+    {
+      "id": "ATLAS_HUMANO",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "identity_unresolved",
+      "note": "Candidato sobreposto com ONE_HEALTH"
+    },
+    {
+      "id": "AETHER_NEXUS",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "identity_unresolved",
+      "note": "NexusPanchea100MasterEngine; autonomia face a NEXUS não demonstrada"
+    },
+    {
+      "id": "GENOMICA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "identity_unresolved",
+      "note": "DNA_ATLAS/engine.py e módulos: candidato G4.0, não ativado"
+    },
+    {
+      "id": "EPIDEMIOLOGIA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "identity_unresolved",
+      "note": "Sem motor epidemiológico autónomo atribuível com segurança"
+    },
+    {
+      "id": "FONTES_GLOBAIS",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "identity_unresolved",
+      "note": "global_gateway_v05.py: possível ingestão, sem autonomia aprovada"
+    },
+    {
+      "id": "EPIGENOMICA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "independent_source_not_demonstrated",
+      "note": "Sem núcleo independente demonstrado"
+    },
+    {
+      "id": "VETERINARIA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "independent_source_not_demonstrated",
+      "note": "Sem núcleo independente demonstrado"
+    },
+    {
+      "id": "TOXICOLOGIA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "independent_source_not_demonstrated",
+      "note": "Sem núcleo independente demonstrado"
+    },
+    {
+      "id": "IMUNOLOGIA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "independent_source_not_demonstrated",
+      "note": "Sem núcleo independente demonstrado"
+    },
+    {
+      "id": "MICROBIOLOGIA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "independent_source_not_demonstrated",
+      "note": "Sem núcleo independente demonstrado"
+    },
+    {
+      "id": "NEUROCIENCIAS",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "independent_source_not_demonstrated",
+      "note": "Sem núcleo independente demonstrado"
+    },
+    {
+      "id": "CLIMA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "independent_source_not_demonstrated",
+      "note": "Sem núcleo independente demonstrado"
+    },
+    {
+      "id": "OCEANOGRAFIA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "independent_source_not_demonstrated",
+      "note": "Sem núcleo independente demonstrado"
+    },
+    {
+      "id": "FARMACOLOGIA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "independent_source_not_demonstrated",
+      "note": "Sem núcleo independente demonstrado"
+    },
+    {
+      "id": "BIOESTATISTICA",
+      "role": "SCIENTIFIC_ENGINE_CANDIDATE",
+      "evidence": "independent_source_not_demonstrated",
+      "note": "Sem núcleo independente demonstrado"
+    }
+  ]
+}
