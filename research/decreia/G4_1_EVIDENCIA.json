@@ -1,0 +1,46 @@
+{
+  "project": "DECREIA",
+  "phase": "G4.1",
+  "date": "2026-11-13",
+  "candidate": "DNA_ATLAS",
+  "source_identity": "DERKEIA/2.0.0-research",
+  "proposed_slot": "GENOMICA",
+  "source_hashes_verified": 6,
+  "source_hashes_expected": 6,
+  "direct_original_tests": {
+    "passed": 12,
+    "failed": 1,
+    "total": 13
+  },
+  "synthetic_mutation_replay": {
+    "checked": 450,
+    "classes": 15,
+    "errors": 0
+  },
+  "synthetic_pipeline": {
+    "generated": 56,
+    "strata": 28,
+    "replay_verified": 56,
+    "deterministic": true,
+    "original_reference_assets_used": false
+  },
+  "io_contract": {
+    "tested": 6,
+    "passed": 6,
+    "isolated": true,
+    "registered_in_omni25": false
+  },
+  "findings_reproduced": 5,
+  "real_reference_inputs_missing": [
+    "refs/mt_rCRS_2bit.b64",
+    "refs/TP53_CDS_NM_000546.fa"
+  ],
+  "classification": {
+    "technical": "DEMONSTRADO_ESCOPO_LIMITADO",
+    "identity": "PENDENTE",
+    "scientific": "NAO_VALIDADO",
+    "clinical": "NAO_APTO_PARA_USO"
+  },
+  "active_omni25_integration": false,
+  "original_code_published": false
+}
