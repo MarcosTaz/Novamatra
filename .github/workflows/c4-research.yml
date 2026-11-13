@@ -1,0 +1,32 @@
+name: NOVAMATRA C4 research validation
+on:
+  push:
+    paths:
+      - 'research/c4/**'
+      - 'private-platform/db.mjs'
+      - 'private-platform/tests/c4-seed.test.mjs'
+      - '.github/workflows/c4-research.yml'
+  pull_request:
+    paths:
+      - 'research/c4/**'
+      - 'private-platform/db.mjs'
+      - 'private-platform/tests/c4-seed.test.mjs'
+      - '.github/workflows/c4-research.yml'
+permissions:
+  contents: read
+jobs:
+  baseline-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Execute deterministic baseline tests
+        working-directory: research/c4
+        run: python -m unittest discover -s tests -v
+      - name: Generate C4 numerical evidence
+        working-directory: research/c4
+        run: python -m c4.model
+      - name: Check protected-portal project seed
+        run: node --test private-platform/tests/c4-seed.test.mjs
