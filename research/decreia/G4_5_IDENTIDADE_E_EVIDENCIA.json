@@ -1,0 +1,41 @@
+{
+  "project": "DECREIA",
+  "phase": "G4.5",
+  "date": "2026-11-13",
+  "bible": "0032",
+  "source_identity": "DNA_ATLAS / DERKEIA 2.0.0-research",
+  "slot": "GENOMICA",
+  "genomica_historical_separate_engine": "NOT_PROVEN",
+  "binding_type": "ARCHITECTURAL_ALIAS_CANDIDATE",
+  "g33_genomica_adapter": "DISABLED_NOT_CONNECTED",
+  "g35_original_active": [
+    "MAC",
+    "MPCVG",
+    "NCLE"
+  ],
+  "g38_file_matches_for_genomica": 6,
+  "g38_matches_same_package": "DNA_ATLAS",
+  "development_tests": {
+    "passed": 4,
+    "total": 4,
+    "positive_counts": {
+      "EXECUTED": 4,
+      "BLOCKED": 21
+    },
+    "abstention_counts": {
+      "EXECUTED": 3,
+      "ABSTAINED": 1,
+      "BLOCKED": 21
+    },
+    "mutated_files_rejected": true,
+    "invalid_scope_rejected": true,
+    "tampered_request_rejected": true
+  },
+  "testing_mode": "ISOLATED_SHADOW_COPY_G35",
+  "production_registry_modified": false,
+  "windows_accepted": false,
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "clinical_use": "NOT_APPROVED",
+  "omni25_promotion": "NOT_PROMOTED",
+  "original_scientific_sources_publicly_uploaded": false
+}
