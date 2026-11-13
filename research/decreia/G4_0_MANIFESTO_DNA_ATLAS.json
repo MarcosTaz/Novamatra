@@ -1,0 +1,31 @@
+{
+  "project": "DECREIA",
+  "phase": "G4.0",
+  "candidate": "DNA_ATLAS",
+  "proposed_component": "GENOMICA",
+  "identity_status": "PENDING",
+  "dynamic_execution": "NOT_PERFORMED",
+  "scientific_validation": "NOT_ASSESSED",
+  "manifest_source": "G3.8 targeted forensic report, 2026-11-13",
+  "source_sha256": {
+    "engine.py": "72296e22c839ae76f9160c5f3c0d8fb10ac1ccafc88d129bdcfe98c6c374d3a6",
+    "patterns.py": "084d2f2c8deea79c8d5a4b3e49c70a564e792086477c4732cc068db336cc6c3e",
+    "triage.py": "c5d6fbe6da61e1c08b31bb0dad122b62523b63154ec017b918fb728c6878415c",
+    "replay.py": "2f7d9d09c4d4bb9c73747b9dd58483c5e6a8b26fcf821256f431005bd0f5bd34",
+    "external.py": "e40176bfa458ea4948120cbd9b6427f21412cb8d4bf22aabebf707e3a7b45bdc",
+    "__init__.py": "a66c166202787845edb67cf67fdee7977a25554559713597533e48c71dc6dc83"
+  },
+  "recovery_package_sha256": "c7497c39ea583fa01577526a8b071cd8d0b8d9fb3d12a6984e6d2e2e0b582b1d",
+  "recovery_collector_tests": {
+    "passed": 11,
+    "total": 11,
+    "scope": "collector synthetic fixtures only"
+  },
+  "negative_test": {
+    "source": "G3.6 package without DNA_ATLAS",
+    "verified_modules": 0,
+    "expected_modules": 5,
+    "exit_code": 2
+  },
+  "privacy": "original scientific source code is NOT included in this public repository"
+}
