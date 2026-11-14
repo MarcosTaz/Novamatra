@@ -1,0 +1,51 @@
+{
+  "schema": "DECREIA_G52_G54_PUBLIC_EVIDENCE_V1",
+  "date": "2026-11-14",
+  "bible": "0037",
+  "G48_G51_windows": {
+    "file_manifest_sha256_passed": 19,
+    "files_in_manifest": 19,
+    "technical_executions": 4,
+    "blocked": 21,
+    "abstained_without_genomica": 1,
+    "catalog_motor_rows": 4,
+    "catalog_execution_rows": 4,
+    "scientific_gates_promoted": 0
+  },
+  "G52_G54_local": {
+    "source_package": "DECREIA_G3_6_INTEGRACAO_ACUMULADA_BIBLIA_0022.zip",
+    "six_source_original_hashes_verified": 6,
+    "six_candidates": [
+      "ONE_HEALTH",
+      "GAIA_ECOPATHOLOGY",
+      "SYNAPSE",
+      "NEXUS",
+      "OMNI_EXODUS",
+      "ECOLOGIA"
+    ],
+    "historical_nexus_adapter": "FAIL_MISSING_REQUIRED_CONFIG",
+    "corrected_nexus_adapter_sha256": "6edc2c949ff5a7dca7e82f8a5550674e640b98aa85d3acf596dddf4418129016",
+    "nexus_original_untouched": true,
+    "nexus_min_sample_size": 30,
+    "nexus_CVaR_synthetic": 2.65,
+    "technical_routes_executed": 10,
+    "blocked": 15,
+    "abstained_six": 6,
+    "negative_checks_passed": 8,
+    "negative_checks_total": 8,
+    "catalog_motor_rows": 10,
+    "catalog_execution_rows": 10,
+    "independent_receipt_digests_verified": 28,
+    "scientific_gates_promoted": 0,
+    "windows_receipts_received": false
+  },
+  "delivery": {
+    "name": "DECREIA_G52_G54_MACRO_EXECUCAO_BIBLIA_0037.zip",
+    "sha256": "37532a33d9bee3e6e8e2ba4853065464cc86225e46110eed91398321f59a4908",
+    "file_count": 26
+  },
+  "production_promoted": false,
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "clinical_use": "NOT_APPROVED",
+  "original_scientific_code_publicly_uploaded": false
+}
