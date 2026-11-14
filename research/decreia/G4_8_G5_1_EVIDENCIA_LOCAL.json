@@ -1,0 +1,65 @@
+{
+  "project": "DECREIA",
+  "dates": {
+    "development": "2026-11-14"
+  },
+  "phase_range": [
+    "G4.8",
+    "G4.9",
+    "G5.0",
+    "G5.1"
+  ],
+  "bible": "0036",
+  "build": "DECREIA_G4_8_G5_1_MACRO_EXECUCAO_BIBLIA_0036.zip",
+  "zip_sha256": "72349c9f9bf4723a0c5c7edf8f3d53d83cba00b59839c08665fd7e02a038d304",
+  "zip_size_bytes": 56693,
+  "zip_entries": 14,
+  "development_tests": {
+    "passed": 40,
+    "total": 40
+  },
+  "negative_checks": {
+    "passed": 7,
+    "total": 7
+  },
+  "shadow_orchestration": {
+    "EXECUTED": 4,
+    "ABSTAINED": 0,
+    "FAILED": 0,
+    "REJECTED": 0,
+    "BLOCKED": 21
+  },
+  "shadow_abstention": {
+    "EXECUTED": 3,
+    "ABSTAINED": 1,
+    "FAILED": 0,
+    "REJECTED": 0,
+    "BLOCKED": 21
+  },
+  "catalog_shadow": {
+    "metadata_rows": 4,
+    "technical_execution_rows": 4,
+    "validation_gates_promoted": 0,
+    "code_unchanged": true
+  },
+  "architecture": {
+    "slots": 25,
+    "scientific_engine_candidate_slots": 23,
+    "coordinator_slots": 1,
+    "ingestion_gateway_slots": 1,
+    "additional_code_identified_unintegrated": 6,
+    "forensic_g38_candidates": 22
+  },
+  "identity": {
+    "canonical": "DNA_ATLAS",
+    "source_original": "DERKEIA 2.0.0-research",
+    "route_alias": "GENOMICA",
+    "historical_separate_engine": "PENDING"
+  },
+  "development_scope": "LOCAL_SYNTHETIC_SHADOW_ONLY",
+  "windows_acceptance": "PENDING",
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "clinical_validation": "NOT_APPROVED",
+  "production_registry_modified": false,
+  "original_sources_publicly_uploaded": false
+}
