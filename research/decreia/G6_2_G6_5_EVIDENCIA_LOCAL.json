@@ -1,0 +1,67 @@
+{
+  "schema": "DECREIA_G62_G65_PUBLIC_SUMMARY_V1",
+  "date": "2026-11-14",
+  "bible": "0044",
+  "phase_range": [
+    "G6.2",
+    "G6.3",
+    "G6.4",
+    "G6.5"
+  ],
+  "source_g60_sha256": "b29debb4bf50e81321a6fe51a321bf611301c9aa5166da35255aabb5b939cc7d",
+  "local": {
+    "environment": "Linux Python 3.13.5",
+    "archive_entries": 265,
+    "manifest_sha_pass": 215,
+    "receipt_checks_pass": 73,
+    "portable_diff_replays_pass": 6,
+    "g59": {
+      "passed": 119,
+      "skip": 4,
+      "fail": 0,
+      "error": 0
+    },
+    "g60": {
+      "passed": 22,
+      "skip": 0,
+      "fail": 0
+    },
+    "g63_old_numeric": {
+      "pass": 9,
+      "fail": 1
+    },
+    "g63_candidate_numeric": {
+      "pass": 10,
+      "fail": 0
+    },
+    "g63_candidate_historical_ecologia": {
+      "pass": 23,
+      "fail": 0
+    },
+    "g64": {
+      "shadow_outputs_equal": 10,
+      "negative_tests_pass": 36,
+      "sqlite_quick_check": "ok",
+      "unpromoted_gates": 10
+    },
+    "g65": {
+      "architecture": 25,
+      "scientific_engine_routes": 10,
+      "scientific_slots_unresolved": 13,
+      "additional_gateway_pending": 1
+    }
+  },
+  "g63_ecologia": {
+    "old_sha256": "15d000d9c064cd26d15f18e22ad658f399b339d87d267c326c6b874f0964eb7a",
+    "candidate_sha256": "676742ad7b7ef2ba67b242da848e107ed9eb0c8185c19d13dce823232eeecf61",
+    "candidate_integrated_in_shadow": false
+  },
+  "local_status": "PASS_WITH_BLOCKERS",
+  "windows_acceptance": "PENDING",
+  "archive_sha256": "402dfeaac0bfbdf60c5ad89510d5e4428b2f50c18f340ecc9e3aa9ec980ca936",
+  "local_proof_sha256": "c794baf560b1bf9be34ae306fc7dd4612e51acc54c16117f0ab03b9b8a5cb6d8",
+  "original_code_publicly_published": false,
+  "production_modified": false,
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "clinical_use": "NOT_APPROVED"
+}
