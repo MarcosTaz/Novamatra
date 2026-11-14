@@ -1,0 +1,39 @@
+{
+  "schema": "DECREIA_G47_PUBLIC_AUDIT_SUMMARY_V1",
+  "date": "2026-11-14",
+  "source": "gestor.py",
+  "bytes": 16102,
+  "sha256": "9b1efedfa457f46eff467b9f960dbd9d43bc869ff8f27d3a1a6ca67f70fbff9a",
+  "verification": {
+    "passed": 22,
+    "total": 22,
+    "classification": "technical_local_integrity_and_catalog_tests_not_scientific_validation"
+  },
+  "sqlite_temporary_test": {
+    "sources_seeded": 8,
+    "engine_metadata_rows_after_register": 1,
+    "motor_statuses": [
+      "NAO_TESTADO",
+      "NAO_TESTADO",
+      "NAO_TESTADO"
+    ],
+    "engine_execution_rows": 0,
+    "artificial_ingestion_rows": 1,
+    "non_synthetic_manifest_state": "QUARENTENA",
+    "duplicate_registration_rejected": true,
+    "quick_check": "ok"
+  },
+  "compare": {
+    "G35_runner_hash": "86db03dbd01fc6e1768e18f9d4307e35cc033be953862e182fa03bdd050688fa",
+    "G35_role": "adapter_dispatch",
+    "V01_role": "catalog_metadata_no_dispatch"
+  },
+  "provenance": {
+    "source_original_preserved": true,
+    "production_instance_proven": false
+  },
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "clinical_use": "NOT_APPROVED",
+  "omni25_promotion": "NOT_PROMOTED",
+  "original_source_published": false
+}
