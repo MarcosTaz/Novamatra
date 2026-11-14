@@ -1,0 +1,61 @@
+{
+  "schema": "DECREIA_G61_PUBLIC_AUDIT_V1",
+  "date": "2026-11-14",
+  "source_sha256": "b29debb4bf50e81321a6fe51a321bf611301c9aa5166da35255aabb5b939cc7d",
+  "manifest_entries": 215,
+  "archive_entries": 265,
+  "filename_portability_issue": 1,
+  "strict_verifier_before": {
+    "pass": 71,
+    "total": 73
+  },
+  "copied_filename_normalization": {
+    "content_unchanged": true,
+    "manifest_pass": 215,
+    "verifier_pass": 73,
+    "verifier_total": 73
+  },
+  "independent_python": "3.13.5",
+  "g60_tests": {
+    "pass": 22,
+    "total": 22,
+    "fail": 0,
+    "error": 0
+  },
+  "g59_tests": {
+    "pass": 119,
+    "skip": 4,
+    "total": 123,
+    "fail": 0,
+    "error": 0,
+    "optional_dependency": "dp_accounting missing"
+  },
+  "shadow_positive": {
+    "EXECUTED": 10,
+    "BLOCKED": 15,
+    "outputs_equal_uploaded": 10
+  },
+  "shadow_abstention": {
+    "EXECUTED": 4,
+    "ABSTAINED": 6,
+    "BLOCKED": 15
+  },
+  "targeted_invalid_inputs_status_FAILED": 3,
+  "negative_36_full_reproduction": false,
+  "sqlite": {
+    "quick_check": "ok",
+    "foreign_key_issues": 0,
+    "rows_engines": 10,
+    "rows_receipts": 10,
+    "scientific_gates_promoted": 0
+  },
+  "original_run_windows_risks": [
+    "fixed_temp_folder_deletion",
+    "automatic_pip_dependency_install"
+  ],
+  "g61_acceptance_pack_sha256": "023df968f54515fe95cd9fcf9baa3141daa42e3ad666364bfc32b6e180a22e6b",
+  "windows_acceptance": "PENDING",
+  "production_modified": false,
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "original_sources_publicly_uploaded": false
+}
