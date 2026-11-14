@@ -1,0 +1,66 @@
+{
+  "project": "DECREIA",
+  "phase": "G6.1",
+  "date": "2026-11-14",
+  "bible": "0043",
+  "windows_receipts_zip_sha256": "8befb7c9c64f3cd22dc11a4ac39cdcf0a383f13ad85aca39d984f1e9927f2379",
+  "source_g60_sha256": "b29debb4bf50e81321a6fe51a321bf611301c9aa5166da35255aabb5b939cc7d",
+  "receipt_entries": 6,
+  "internal_cross_checks_pass": 18,
+  "reported_environment": "Windows Python 3.12.10",
+  "manifest_hashes_reported": 215,
+  "receipt_verifier_reported": {
+    "pass": 73,
+    "total": 73
+  },
+  "g60_tests_reported": {
+    "pass": 22,
+    "skip": 0,
+    "total": 22
+  },
+  "g59_tests_reported": {
+    "pass": 118,
+    "skip": 5,
+    "fail": 0,
+    "error": 0,
+    "total": 123
+  },
+  "skip_classifications": {
+    "GA03": 2,
+    "SY05": 2,
+    "INTEGRITY": 1
+  },
+  "skip_likely_causes": [
+    "dp_accounting unavailable for 4",
+    "patch executable unavailable for 1"
+  ],
+  "shadow_reported": {
+    "positive": {
+      "EXECUTED": 10,
+      "BLOCKED": 15
+    },
+    "abstention": {
+      "EXECUTED": 4,
+      "ABSTAINED": 6,
+      "BLOCKED": 15
+    },
+    "bad_inputs": {
+      "EXPECTED_FAILED": 3,
+      "EXECUTED": 7
+    }
+  },
+  "negative_tests_reported": {
+    "pass": 36,
+    "total": 36
+  },
+  "warnings_in_g59_log": {
+    "RuntimeWarning": 4,
+    "FutureWarning": 1
+  },
+  "original_source_bytes_in_receipts": false,
+  "machine_externally_attested": false,
+  "production_promotion": "NOT_PROMOTED",
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "clinical_use": "NOT_APPROVED",
+  "original_sources_publicly_published": false
+}
