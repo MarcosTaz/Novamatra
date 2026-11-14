@@ -1,0 +1,51 @@
+{
+  "schema": "DECREIA_G55_G58_PUBLIC_EVIDENCE_V1",
+  "date": "2026-11-14",
+  "bible": "0038",
+  "private_artifact": "DECREIA_G55_G58_AUDITORIA_PROFUNDA_BIBLIA_0038.zip",
+  "private_artifact_sha256": "cf8c20c7e1becb64a5f7687f5266a24c28add9c31a43bfd42116db6406177959",
+  "g55": {
+    "original_components_verified": 6,
+    "source_identity_anchor": "G3.6 original source hashes",
+    "ast_inspection": true
+  },
+  "g56": {
+    "synthetic_property_checks_passed": 26,
+    "total": 26,
+    "scientific_validation_inferred": false
+  },
+  "g57": {
+    "observations_total": 17,
+    "executed_demonstrations": 11,
+    "source_scope_reviews": 6,
+    "severity_distribution": {
+      "critical_conditional": 1,
+      "high": 9,
+      "medium": 6,
+      "low": 1
+    },
+    "clinical_harm_incident_proven": false
+  },
+  "g58": {
+    "new_motors": 0,
+    "sources_merged": false,
+    "promotions": 0,
+    "production_modified": false,
+    "genomica_alias": "DNA_ATLAS",
+    "scientific_validation": "NOT_DEMONSTRATED",
+    "clinical_use": "NOT_APPROVED"
+  },
+  "sources": {
+    "ONE_HEALTH": "35548c3881a8938341fb45bdae607d4f0ac706ebb38f3a8f1280a1d5eeaa2c6c",
+    "GAIA_ECOPATHOLOGY": "50d9ab59fe7acb3f9226704b9cf3e8054b9736faf90d05e33cd73f1bff02b4c5",
+    "SYNAPSE": "afe69a44946f760f406b85115a6e8110a4ef04f01dc979dc06b15968d5e25417",
+    "NEXUS": "56e1d42f7138d2efd83194f879f0679dc0b2f9c64c93b2de964ceac208a497ab",
+    "OMNI_EXODUS": "e522884cb5c0d623ac25ac95d5451619a4c3953310823ac2a44e73233069ea13",
+    "ECOLOGIA": "ff415fac8971bbae13f82c172d64d0286ed2b823bd73862a7d52c3e7eb1b058e"
+  },
+  "status": {
+    "windows_g52_g54_receipt": "PENDING",
+    "windows_g55_g58_receipt": "PENDING",
+    "scope": "development_only"
+  }
+}
