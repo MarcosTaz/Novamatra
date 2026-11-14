@@ -1,0 +1,40 @@
+{
+  "schema": "DECREIA_G59_INDEPENDENT_PUBLIC_SUMMARY_V1",
+  "date": "2026-11-14",
+  "bible": "0039",
+  "source_zip_sha256": "6c771b5b58c099e42ca99048fb3494b398cb9e0a0975e0c5c18204160f83d639",
+  "originals_identical": 16,
+  "original_files": 16,
+  "sha256_receipts_passed": 56,
+  "patches_reapplied": 6,
+  "patches_exact_matches": 6,
+  "perplexity_python312": {
+    "pass": 123,
+    "tests": 123,
+    "claimed": true
+  },
+  "independent_python313": {
+    "pass": 119,
+    "tests": 123,
+    "skip": 4,
+    "fail": 0,
+    "error": 0
+  },
+  "skip_reason": "dp_accounting not installed",
+  "extra_probes": {
+    "pass": 5,
+    "total": 5
+  },
+  "gating": {
+    "FIXED_VERIFIED": 5,
+    "FIXED_FAIL_SAFE_CAPABILITY_BLOCKED": 2,
+    "FIXED_SCOPE_GUARDED": 2,
+    "PARTIAL_MITIGATION": 6,
+    "BLOCKED_CAPABILITY_WITH_MITIGATION": 2
+  },
+  "integrated_shadow_with_patched_motors": false,
+  "windows_user_run": false,
+  "scientific_validated": false,
+  "production_promoted": false,
+  "source_published": false
+}
