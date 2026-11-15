@@ -72,5 +72,23 @@ export async function initialize(){
     VALUES ('project-proof','PROJECT PROOF','Laboratório local de simulação industrial: catálogo de 15 máquinas 3D, 15 células, HMIs virtuais e ferramentas de inspeção de peças.','R16: Engineering Lab, Factory Builder, R14 Control Lab, R15 PART STUDIO e LIVE SECTION LAB. Biblioteca de 49 GLB e 147 animações declaradas nos 15 modelos principais. Versões integras e corrigida PowerShell 5.1 preservadas em NOVAMATRA_PRIVADO/PROJECT_PROOF, com SHA-256. O arranque em Windows, a integração CAD peça-máquina, as HMIs OEM, os modelos físicos e a segurança funcional não estão validados. Este registo não torna o simulador executável pela Internet nem deve ser usado com hardware industrial.','Engenharia / testes pendentes','Simulação industrial','Alta')
     ON CONFLICT(slug) DO NOTHING`);
 
+  // RF300: metadados de baixo risco apenas; desenhos, simulações e ZIPs no arquivo privado.
+  await query(`INSERT INTO nm_projects(slug,title,summary,details,status,track,priority)
+    VALUES ('rf300-multirotor','RF300 / TURBINA MULTIRROTOR',
+      'Projeto autónomo de engenharia para estudo de aproveitamento de energia em escoamentos pressurizados.',
+      'P0.1 (15/11/2026): bancada virtual paramétrica, três referências mecânicas de origem preservadas e balanço didático para ar de baixa queda de pressão. Não existem CFD, ensaios com vapor, potência elétrica medida, materiais ou segurança de pressão validados. Dossier técnico integral reservado em NOVAMATRA_PRIVADO/RF300_MULTIROTOR. Não publicar detalhes geométricos nem iniciar contactos externos.',
+      'Engenharia / validação pendente','Sistemas de energia','Alta')
+    ON CONFLICT(slug) DO NOTHING`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','P0.1 — bancada virtual inicial',
+    'Ambiente local interativo, modelo CAD de referência e testes de invariantes matemáticos implementados; sem validade CFD ou desempenho medido.','Concluído'
+    FROM nm_projects p WHERE p.slug='rf300-multirotor'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.1 — bancada virtual inicial')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','G1 — condições de contorno e geometria operacional',
+    'Determinar pressão absoluta, temperatura, caudal, propriedades do fluido, saída, perdas, ligação da câmara superior e compatibilidade de gerador, suporte e veio. Depois avançar para conservação de energia e CFD.','Aberto'
+    FROM nm_projects p WHERE p.slug='rf300-multirotor'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G1 — condições de contorno e geometria operacional')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
