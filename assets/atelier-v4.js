@@ -1,0 +1,9 @@
+(()=>{'use strict';
+const words={
+pt:{mast:'INDEPENDENT ENGINEERING HOUSE',pre:'INVESTIGAÇÃO INDEPENDENTE · PORTUGAL',a:'O futuro,',b:'por demonstrar.',intro:'Antes de existir um produto, existe uma pergunta.<br>Antes de uma promessa, exigimos evidência.',button:'ENTRAR NO UNIVERSO NOVAMATRA',note:'A exploração começa por escolha. Sem redirecionamentos automáticos.',foot:'INVESTIGAÇÃO EM CURSO',mid:'CIÊNCIA. ENGENHARIA. MATÉRIA.'},
+en:{mast:'INDEPENDENT ENGINEERING HOUSE',pre:'INDEPENDENT RESEARCH · PORTUGAL',a:'The future,',b:'to be proven.',intro:'Before there is a product, there is a question.<br>Before a promise, we demand evidence.',button:'ENTER THE NOVAMATRA UNIVERSE',note:'Explore by choice. No automatic redirection.',foot:'RESEARCH IN PROGRESS',mid:'SCIENCE. ENGINEERING. MATTER.'},
+fr:{mast:'MAISON INDÉPENDANTE D’INGÉNIERIE',pre:'RECHERCHE INDÉPENDANTE · PORTUGAL',a:'L’avenir,',b:'à démontrer.',intro:'Avant tout produit, il y a une question.<br>Avant toute promesse, nous exigeons des preuves.',button:'DÉCOUVRIR NOVAMATRA',note:'Explorez volontairement. Aucune redirection automatique.',foot:'RECHERCHE EN COURS',mid:'SCIENCE. INGÉNIERIE. MATIÈRE.'}
+};
+function setLang(lang){const t=words[lang];if(!t)return;document.documentElement.lang=lang==='pt'?'pt-PT':lang;const fields={'mast-center':t.mast,pretitle:t.pre,'line-one':t.a,'line-two':t.b,'entrance-label':t.button,subnote:t.note,'foot-left':t.foot,'foot-mid':t.mid};for(const [id,value] of Object.entries(fields))document.getElementById(id).textContent=value;document.getElementById('intro').innerHTML=t.intro;document.getElementById('entrance').setAttribute('href','/'+lang+'/');document.querySelectorAll('[data-lang]').forEach(b=>{const selected=b.dataset.lang===lang;b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',String(selected))})}
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+})();
