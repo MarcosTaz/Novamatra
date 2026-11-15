@@ -1,0 +1,51 @@
+{
+  "schema": "DECREIA_G241_G300_PUBLIC_SUMMARY_V1",
+  "date": "2026-11-15",
+  "bible": "0059",
+  "status": "PASS_WITH_BLOCKERS",
+  "execution_environment": "Linux Python 3.13",
+  "windows_acceptance": "PENDING",
+  "distribution_archive_sha256": "1a54df0b338d100506c48236950aef0fafad49e3303461a7c0b3e228794f8c81",
+  "distribution_files": 30,
+  "distribution_hashes_pass": 29,
+  "math_unit_tests": {
+    "pass": 96,
+    "total": 96,
+    "fail": 0,
+    "skip": 0
+  },
+  "adversarial_verifier_tests": {
+    "pass": 7,
+    "total": 7
+  },
+  "synthetic_shadow": {
+    "engines_executed": 10,
+    "slots_blocked": 15,
+    "independent_math_checks": 5,
+    "structural_checks": 5,
+    "new_case": true
+  },
+  "scientific_lab": {
+    "new_math_method_prototypes": 12,
+    "aether_univariate_math_lab": 1,
+    "registered_scientific_engines_added": 0
+  },
+  "sources": {
+    "registered": 166,
+    "catalogued": 149,
+    "legacy_or_federated": 17,
+    "external_requests": 0,
+    "real_data_verified": 0
+  },
+  "architecture": {
+    "engine_slots": 23,
+    "limited_original_engines": 10,
+    "unresolved_historical_engines": 13,
+    "aether_nexus_status": "NAO_APTO"
+  },
+  "production_modified": false,
+  "clinical_use": "NOT_APPROVED",
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "sources_published": false,
+  "external_contacts": false
+}
