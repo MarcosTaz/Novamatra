@@ -1,0 +1,35 @@
+{
+  "schema": "DECREIA_G181_PUBLIC_EVIDENCE_V1",
+  "date": "2026-11-15",
+  "bible": "0055",
+  "previous_windows_result_sha256": "880be5dfc6cb0d7ce7530f414c09deefc0f8c3814aa954749f77957b4810efef",
+  "previous_windows_test_result": {
+    "passed": 43,
+    "total": 43
+  },
+  "g181_local": {
+    "phases_pass": 12,
+    "phases_total": 12,
+    "new_tests_pass": 48,
+    "history_reexecuted_pass": 43,
+    "tests_total_executed": 91,
+    "receipts_sha256_pass": 12
+  },
+  "gateway": {
+    "ids": 166,
+    "synthetic_records": 31,
+    "valid_link_format_only": 30,
+    "quarantined": 1,
+    "quarantined_source": "ols_ebi",
+    "quarantined_id": "EFO:1",
+    "cross_source_collisions": 3,
+    "live_endpoints_tested": 0
+  },
+  "canonical_sha256": "a31d7e0f17e441e25672084b89fe646141bebd9411ee3a5154215b1822300e8b",
+  "archive_sha256": "31a25cc0123647086c636c3cde7a4091bfe77ae6f735b55ebc876a403",
+  "archive_private": true,
+  "windows_acceptance": "PENDING",
+  "scientific_engines_added": 0,
+  "production_promoted": false,
+  "scientific_validation": "NOT_DEMONSTRATED"
+}
