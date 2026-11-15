@@ -116,5 +116,18 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='rf300-multirotor'
       AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G3 — avaliação física e acústica')`);
 
+  // RF300 P0.4: registo de fase, apenas metadados; sem publicar geometria original ou resultados privados.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','P0.4 — estudo de densidade de rotores',
+      'Estudo virtual de 56/154/168/224 rotores em painel serpentino até 20m totais, incluindo curvas. 168 apenas como limite axial geométrico; 224 exige rotor redesenhado. Sem demonstração de eficiência ou viabilidade mecânica. Interface, código, testes e comparações arquivados exclusivamente em NOVAMATRA_PRIVADO/RF300_MULTIROTOR.','Concluído'
+    FROM nm_projects p WHERE p.slug='rf300-multirotor'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.4 — estudo de densidade de rotores')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','G4 — otimização densidade versus perdas por estágio',
+      'Medir ou modelar curvas hidráulicas individuais do rotor, perdas mecânicas, mancais e espaçamentos; comparar ligações geradoras e áreas úteis de secção sob as mesmas condições de entrada e saída. Não presumir que mais rotores aumentam a potência disponível. Resolver ainda geometria dos estatores, compatibilidade térmica do RF300 e controlo de condensado.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='rf300-multirotor'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G4 — otimização densidade versus perdas por estágio')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
