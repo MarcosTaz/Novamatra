@@ -67,5 +67,10 @@ export async function initialize(){
     WHERE p.slug='decreia' AND NOT EXISTS
       (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G4.0 — GENOMICA / DNA_ATLAS')`);
 
+  // PROJECT PROOF R16: registo interno idempotente; os ficheiros ZIP/GLB ficam fora do repositório público.
+  await query(`INSERT INTO nm_projects(slug,title,summary,details,status,track,priority)
+    VALUES ('project-proof','PROJECT PROOF','Laboratório local de simulação industrial: catálogo de 15 máquinas 3D, 15 células, HMIs virtuais e ferramentas de inspeção de peças.','R16: Engineering Lab, Factory Builder, R14 Control Lab, R15 PART STUDIO e LIVE SECTION LAB. Biblioteca de 49 GLB e 147 animações declaradas nos 15 modelos principais. Versões integras e corrigida PowerShell 5.1 preservadas em NOVAMATRA_PRIVADO/PROJECT_PROOF, com SHA-256. O arranque em Windows, a integração CAD peça-máquina, as HMIs OEM, os modelos físicos e a segurança funcional não estão validados. Este registo não torna o simulador executável pela Internet nem deve ser usado com hardware industrial.','Engenharia / testes pendentes','Simulação industrial','Alta')
+    ON CONFLICT(slug) DO NOTHING`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
