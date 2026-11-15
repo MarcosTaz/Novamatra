@@ -102,5 +102,19 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='rf300-multirotor'
       AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G2 — validar vapor real e dinâmica da pressão')`);
 
+  // RF300 P0.3: metadados não técnicos. ZIP, código, desenhos e cálculos no Drive privado.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','P0.3 — painel serpentino acústico',
+      'Nova bancada local em modo de estudo: geometria de serpentina com curvas a 180 graus, teto de 20 metros incluindo curvas, perdas locais de pressão assumidas e reserva exterior para isolamento acústico. Modelo sintético 1D, testes executados, sem validação experimental ou CFD. Dossier P0.3 guardado na pasta privada RF300_MULTIROTOR. Nenhum valor de potência ou redução sonora representa medição.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='rf300-multirotor'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.3 — painel serpentino acústico')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','G3 — avaliação física e acústica',
+      'Confirmar comprimento limite incluindo retornos, escolher raio e topologia modular, obter coeficientes de curva medidos, validar caudal versus pressão, analisar ruído e vibração, isolamento térmico, drenagem de condensado, segurança, manutenção e arrefecimento dos geradores. Não publicar engenharia interna ou contactar terceiros sem autorização.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='rf300-multirotor'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G3 — avaliação física e acústica')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
