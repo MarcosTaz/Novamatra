@@ -90,5 +90,17 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='rf300-multirotor'
       AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G1 — condições de contorno e geometria operacional')`);
 
+  // RF300 P0.2: apenas metadados. Código e dados técnicos não são publicados no repositório.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','P0.2 — modelo 1D pressurizado',
+    'Substituição do cálculo eólico por balanço de massa e energia, pressão absoluta e expansão por estágios em gás ideal. Inclui aplicação offline, comparação de arquiteturas e testes sintéticos. Variação de potência apenas condicional; não demonstra CFD, vapor real, curvas de rotor nem geração líquida. Arquivo restrito NOVAMATRA_PRIVADO/RF300_MULTIROTOR.','Concluído'
+    FROM nm_projects p WHERE p.slug='rf300-multirotor'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.2 — modelo 1D pressurizado')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','G2 — validar vapor real e dinâmica da pressão',
+    'Obter propriedades IAPWS-IF97, condições de entrada/saída e caudal, mapas de perdas e bypass na câmara superior. Depois estudar CFD, ondas de pressão, rendimento por rotor e compatibilidade do gerador. Sem construção pressurizada ou contactos externos não autorizados.','Aberto'
+    FROM nm_projects p WHERE p.slug='rf300-multirotor'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G2 — validar vapor real e dinâmica da pressão')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
