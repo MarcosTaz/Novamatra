@@ -1,0 +1,42 @@
+{
+  "schema": "DECREIA_G69_G75_PUBLIC_SUMMARY_V1",
+  "date": "2026-11-15",
+  "bible": "0047",
+  "archive_sha256": "5bc3403271713fd47853b6a9169b5eeb0b883f0d3f369bf95c0dcd59fd216215",
+  "archive_files": 16,
+  "manifest_sha256_pass": 15,
+  "local_directed": {
+    "pass": 26,
+    "total": 26
+  },
+  "shadow": {
+    "EXECUTED": 10,
+    "BLOCKED": 15
+  },
+  "abstention": {
+    "EXECUTED": 4,
+    "ABSTAINED": 6,
+    "BLOCKED": 15
+  },
+  "invalid": {
+    "EXECUTED": 7,
+    "FAILED": 3,
+    "BLOCKED": 15
+  },
+  "negative": {
+    "pass": 36,
+    "total": 36
+  },
+  "candidate_patches": {
+    "ECOLOGIA": "676742ad7b7ef2ba67b242da848e107ed9eb0c8185c19d13dce823232eeecf61",
+    "OMNI_EXODUS": "aa6df93a74e0ec98bc7842938c435cb78bb4d4466b7cd214a051956dbb377945",
+    "EPIDEMIOLOGIA_GATE": "c136c1287e1aa229af63a9cfe89b9d9e4d2efa092df15dcd587b00b47a676431"
+  },
+  "aether": "NAO_APTO",
+  "slots_without_independent_implementation": 12,
+  "gateway": "PENDING",
+  "production_promoted": false,
+  "windows_acceptance": "PENDING",
+  "clinical_validation": "NOT_DEMONSTRATED",
+  "scientific_validation": "NOT_DEMONSTRATED"
+}
