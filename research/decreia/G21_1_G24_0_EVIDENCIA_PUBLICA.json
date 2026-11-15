@@ -1,0 +1,46 @@
+{
+  "schema": "DECREIA_G211_G240_PUBLIC_SUMMARY_V1",
+  "date": "2026-11-15",
+  "bible": "0057",
+  "package_sha256": "9e27c4cb59dec5b9217d51add51c8ee2dc777271fb3d4d3adf4778e61d7b632c",
+  "distribution_files": 18,
+  "distribution_manifest_verified": 17,
+  "local_phases_pass": 16,
+  "local_tests": {
+    "individual_catalog_metadata": 149,
+    "contract_integrity_and_adversarial": 50,
+    "total_pass": 199
+  },
+  "historical_receipt_audit_reexecuted": {
+    "checks_pass": 300
+  },
+  "source_catalog": {
+    "sources_registered": 166,
+    "catalog_rows": 149,
+    "legacy_or_federated_without_catalog_row": 17,
+    "metadata_https_syntax_pass": 149,
+    "shared_endpoint_groups": 2,
+    "synthetic_records": 31,
+    "quarantine": 1,
+    "cross_source_duplicate_id_groups": 3,
+    "live_endpoints_tested": 0
+  },
+  "architecture": {
+    "positions": 25,
+    "scientific_engine_slots": 23,
+    "scientific_engine_routes_limited": 10,
+    "scientific_engine_slots_unresolved": 13,
+    "coordinators": 1,
+    "gateways": 1,
+    "current_source_files_directly_verified": 6,
+    "engine_receipt_hashes_verified": 10,
+    "new_scientific_engines": 0
+  },
+  "protocol_cards_prepared": 10,
+  "scientific_validation_tests_run": 0,
+  "scientific_validation": "NOT_DEMONSTRATED",
+  "windows_acceptance": "PENDING",
+  "production_promoted": false,
+  "external_contacts": false,
+  "source_code_published": false
+}
