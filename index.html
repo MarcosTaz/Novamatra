@@ -2,104 +2,38 @@
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#030d11">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#04090c">
 <meta name="robots" content="index,follow">
-<title>NOVAMATRA — Independent Research & Engineering</title>
-<meta name="description" content="NOVAMATRA. Investigação e engenharia independente em Portugal. Uma entrada para os nossos programas de investigação, métodos e projetos.">
+<title>NOVAMATRA — Investigação. Engenharia. O futuro por demonstrar.</title>
+<meta name="description" content="NOVAMATRA — Investigação e engenharia independente em Portugal. Descubra os programas, os métodos e a ambição de transformar hipóteses em evidência.">
 <link rel="canonical" href="https://www.novamatra.com/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="NOVAMATRA">
-<meta property="og:title" content="NOVAMATRA — Research · Engineering · Future Systems">
-<meta property="og:description" content="Independent research and engineering. Enter the NOVAMATRA universe.">
-<meta property="og:url" content="https://www.novamatra.com/">
-<style>
-:root{color-scheme:dark;--ink:#e2f5f4;--muted:#93adb4;--cyan:#a6f6f2;--line:rgba(158,228,234,.22)}
-*{box-sizing:border-box}
-html,body{height:100%;margin:0}
-body{background:#030c11;color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow:hidden}
-a{color:inherit;text-decoration:none}
-.intro{position:relative;isolation:isolate;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:90px 22px 72px;background:radial-gradient(ellipse at 49% 53%,#133a42 0%,#081b23 34%,#02090e 78%)}
-.intro::before{content:"";position:absolute;inset:-60%;z-index:-5;opacity:.42;background:conic-gradient(from 270deg at 50% 50%,transparent 0deg,rgba(94,200,202,.08) 65deg,transparent 105deg,rgba(56,142,157,.22) 180deg,transparent 230deg,rgba(150,248,238,.1) 300deg,transparent 360deg);animation:turn 50s linear infinite}
-.intro::after{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(90deg,rgba(4,18,22,.55),transparent 25%,transparent 75%,rgba(4,18,22,.55)),radial-gradient(ellipse at center,transparent 25%,rgba(0,0,0,.42) 85%);box-shadow:inset 0 0 125px #01070a}
-.grid{position:absolute;inset:0;z-index:-4;opacity:.19;background-image:linear-gradient(rgba(134,220,226,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(134,220,226,.12) 1px,transparent 1px);background-size:84px 84px;transform:perspective(500px) rotateX(64deg) scale(2.3) translateY(30%);transform-origin:50% 65%;mask-image:linear-gradient(0deg,#000,transparent 86%)}
-.beam{position:absolute;z-index:-3;left:50%;top:43%;width:min(60vw,720px);height:min(60vw,720px);transform:translate(-50%,-50%);border:1px solid rgba(155,242,234,.15);border-radius:50%;box-shadow:0 0 0 90px rgba(128,211,223,.023),0 0 0 180px rgba(128,211,223,.015),0 0 125px 25px rgba(70,181,187,.11),inset 0 0 120px rgba(75,180,193,.07);animation:breathe 9s ease-in-out infinite}
-.beam::before,.beam::after{content:"";position:absolute;inset:12%;border:1px solid rgba(143,225,230,.14);border-radius:50%}
-.beam::after{inset:34%;border-color:rgba(167,244,239,.28);box-shadow:0 0 60px rgba(100,224,218,.15)}
-.shaft{position:absolute;z-index:-3;height:140%;width:1px;background:linear-gradient(transparent,rgba(142,250,238,.25),transparent);top:-20%;transform:rotate(23deg)}
-.shaft.a{left:24%}.shaft.b{left:73%;transform:rotate(-21deg)}
-.top{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:26px clamp(22px,4vw,65px);z-index:5}
-.brand{display:flex;align-items:center;gap:13px;text-transform:uppercase;letter-spacing:.27em;font-size:13px;font-weight:750}
-.mark{position:relative;width:27px;height:34px;display:inline-block}
-.mark::before,.mark::after{content:"";position:absolute;width:9px;height:31px;transform:skew(-25deg);background:linear-gradient(#bcfff5,#4ca9b7);left:4px;top:1px;border-radius:1px}
-.mark::after{left:15px;height:20px;top:12px;transform:skew(25deg);background:linear-gradient(#4c9dad,#92e2de)}
-.languages{display:flex;gap:4px;padding:5px;border:1px solid rgba(154,222,230,.25);border-radius:100px;backdrop-filter:blur(15px)}
-.languages button{border:0;border-radius:999px;padding:8px 11px;background:transparent;color:#b5d0d3;font-family:inherit;font-size:11px;font-weight:600;letter-spacing:.12em;cursor:pointer}
-.languages button[aria-pressed=true]{background:#a4f1e9;color:#03151a}
-.center{position:relative;text-align:center;max-width:1000px;width:100%;animation:reveal 1.6s both cubic-bezier(.16,1,.3,1)}
-.overline{text-transform:uppercase;font-size:clamp(9px,1.3vw,12px);letter-spacing:.34em;color:#a2d3d7;font-weight:600}
-.symbol{width:100px;height:110px;margin:30px auto 10px;filter:drop-shadow(0 0 28px rgba(112,236,223,.2));position:relative}
-.symbol span{position:absolute;top:12px;left:27px;width:22px;height:80px;transform:skew(-24deg);background:linear-gradient(180deg,#cefff6,#4b96a3);border-radius:2px}
-.symbol span+span{left:54px;top:44px;height:48px;transform:skew(24deg);background:linear-gradient(180deg,#54afb9,#8ee2df)}
-h1{font-weight:650;font-size:clamp(34px,6.6vw,91px);letter-spacing:clamp(.13em,1.4vw,.28em);line-height:1.15;margin:13px -0.25em 12px 0;text-indent:.25em;text-shadow:0 10px 50px rgba(2,10,13,.65)}
-.subtitle{text-transform:uppercase;font-size:clamp(10px,1vw,12px);letter-spacing:.31em;color:#a8d0d0;margin:0 0 31px}
-.message{font-size:clamp(16px,2vw,24px);line-height:1.55;color:#d5e7e7;max-width:700px;margin:0 auto 37px;font-weight:300}
-.enter{display:inline-flex;gap:27px;align-items:center;justify-content:center;min-width:235px;min-height:56px;padding:14px 28px;border:1px solid #b6f4ee;border-radius:3px;color:#d9fcf9;background:rgba(21,68,77,.22);box-shadow:0 0 0 1px rgba(148,232,228,.1) inset,0 10px 38px rgba(0,0,0,.2);text-transform:uppercase;font-size:12px;letter-spacing:.18em;font-weight:700;transition:background .25s,transform .25s,box-shadow .25s}
-.enter:hover,.enter:focus-visible{background:rgba(113,228,224,.18);transform:translateY(-2px);box-shadow:0 0 35px rgba(117,236,222,.2)}
-.enter:focus-visible,.languages button:focus-visible{outline:2px solid #fff;outline-offset:4px}
-.arrow{font-size:20px;font-weight:300;line-height:1}
-.disclaimer{margin-top:20px;color:#7caaa9;font-size:11px;letter-spacing:.04em}
-.bottom{position:absolute;bottom:24px;left:clamp(22px,4vw,65px);right:clamp(22px,4vw,65px);display:flex;align-items:end;justify-content:space-between;gap:15px;text-transform:uppercase;font-size:10px;letter-spacing:.21em;color:#729da3}
-.bottom:before{content:"";position:absolute;top:-21px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(155,229,228,.3),transparent)}
-.ticker{display:flex;align-items:center;gap:9px}.ticker::before{content:"";display:block;width:5px;height:5px;border-radius:50%;background:#83e1d9;box-shadow:0 0 16px #7ceddf;animation:pulse 3s infinite}
-@keyframes reveal{from{opacity:0;transform:translateY(25px);filter:blur(9px)}to{opacity:1;transform:none;filter:blur(0)}}
-@keyframes turn{to{transform:rotate(360deg)}}
-@keyframes breathe{50%{opacity:.55;transform:translate(-50%,-50%) scale(1.075)}}
-@keyframes pulse{50%{opacity:.3}}
-@media(max-width:650px){.intro{padding:80px 18px 75px}.top{padding:18px}.brand{font-size:11px;letter-spacing:.19em}.brand .mark{transform:scale(.8)}.languages button{padding:8px 9px}.symbol{transform:scale(.78);margin:10px auto 0}h1{font-size:clamp(30px,8.2vw,48px);letter-spacing:.13em}.overline{line-height:1.7;letter-spacing:.18em}.message{margin-bottom:28px}.subtitle{letter-spacing:.18em}.bottom{left:18px;right:18px;font-size:8px;letter-spacing:.06em}.bottom span:last-child{max-width:42%;text-align:right}}
-@media(max-height:680px){.symbol{height:68px;margin:0 auto;transform:scale(.68)}.subtitle{margin-bottom:16px}.message{margin-bottom:17px}.disclaimer{margin-top:10px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-</style>
+<meta property="og:type" content="website"><meta property="og:site_name" content="NOVAMATRA"><meta property="og:title" content="NOVAMATRA · Independent Research & Engineering"><meta property="og:description" content="The future is not claimed. It is engineered."><meta property="og:url" content="https://www.novamatra.com/">
+<link rel="stylesheet" href="/assets/entry-v3.css">
 </head>
 <body>
-<main class="intro" id="main">
-<div class="grid" aria-hidden="true"></div><div class="beam" aria-hidden="true"></div><div class="shaft a" aria-hidden="true"></div><div class="shaft b" aria-hidden="true"></div>
-<div class="top"><div class="brand"><span class="mark" aria-hidden="true"></span><span>NOVAMATRA</span></div>
-<nav class="languages" aria-label="Selecionar idioma"><button type="button" data-lang="pt" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="fr" aria-pressed="false">FR</button></nav></div>
-<div class="center">
-<div class="overline" id="eyebrow">Investigação independente · Portugal</div>
-<div class="symbol" aria-hidden="true"><span></span><span></span></div>
-<h1>NOVAMATRA</h1>
-<p class="subtitle">Research · Engineering · Future Systems</p>
-<p class="message" id="message">O futuro começa com uma pergunta. A engenharia decide o que pode tornar-se real.</p>
-<a class="enter" href="/pt/" id="enter"><span id="enter-label">Entrar</span><span class="arrow" aria-hidden="true">↗</span></a>
-<div class="disclaimer" id="disclaimer">Investigação exploratória · Resultados sujeitos a validação</div>
-</div>
-<div class="bottom"><span class="ticker" id="bottom-left">Leiria · Portugal</span><span id="bottom-right">Independent Research Platform · 2026</span></div>
+<main class="experience" id="main">
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div><div class="film" aria-hidden="true"></div><div class="scanline" aria-hidden="true"></div>
+<header class="topbar">
+ <a class="ident" href="#main" aria-label="NOVAMATRA, início"><span class="sig" aria-hidden="true"><i></i><i></i><i></i></span><span class="identword">NOVA<span>MATRA</span><small>RESEARCH · ENGINEERING</small></span></a>
+ <div class="topcenter" id="microhead">PLATAFORMA INDEPENDENTE DE INVESTIGAÇÃO</div>
+ <nav class="languages" aria-label="Idioma"><button type="button" class="is-active" data-lang="pt" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="fr" aria-pressed="false">FR</button></nav>
+</header>
+<div class="architecture" aria-hidden="true"><div class="vertical left"></div><div class="vertical right"></div><div class="guide one"></div><div class="guide two"></div></div>
+<section class="hero" aria-labelledby="statement">
+ <div class="editorial">
+  <div class="eyebrow"><span class="dash"></span><span id="eyebrow">INDEPENDENT R&D STUDIO · PORTUGAL</span></div>
+  <h1 id="statement"><span id="h-first">O FUTURO</span><span id="h-second">NÃO SE</span><span class="stroke" id="h-third">ADIVINHA.</span></h1>
+  <p class="thesis" id="thesis">Questiona-se. Desenha-se. Testa-se.<br>O resto é apenas uma promessa.</p>
+  <div class="actions"><a class="enter" href="/pt/" id="enter"><span class="enter-text" id="enter-text">EXPLORAR NOVAMATRA</span><span class="enter-chevron" aria-hidden="true">↗</span></a><span class="entry-note" id="entry-note">ENTRADA POR ESCOLHA.<br>SEM REDIRECIONAMENTOS.</span></div>
+ </div>
+ <div class="object-label" aria-hidden="true"><div class="object-line"></div><span>OBJECT / N<br>FORM STUDY 001</span></div>
+ <div class="scene-index" aria-hidden="true">N/01<span>—</span>∞</div>
+</section>
+<div class="bottomline"><div class="lmeta"><span class="status-led"></span><span id="foot-left">IDEIAS SOB TESTE · RESULTADOS SEM FICÇÃO</span></div><div class="midmeta" id="foot-mid">MATERIAIS <span>·</span> SISTEMAS <span>·</span> MOVIMENTO</div><div class="rmeta">LEIRIA, PORTUGAL <span> / </span> 2026</div></div>
+<noscript><div class="noscript">A animação requer JavaScript, mas pode <a href="/pt/">entrar aqui</a>.</div></noscript>
 </main>
-<script>
-(function(){
-"use strict";
-const copy={
-pt:{eyebrow:"Investigação independente · Portugal",message:"O futuro começa com uma pergunta. A engenharia decide o que pode tornar-se real.",button:"Entrar",note:"Investigação exploratória · Resultados sujeitos a validação",left:"Leiria · Portugal",right:"Plataforma de investigação independente · 2026",aria:"Selecionar idioma"},
-en:{eyebrow:"Independent Research · Portugal",message:"The future begins with a question. Engineering determines what can become real.",button:"Enter",note:"Exploratory research · Results subject to validation",left:"Leiria · Portugal",right:"Independent Research Platform · 2026",aria:"Choose language"},
-fr:{eyebrow:"Recherche indépendante · Portugal",message:"L’avenir commence par une question. L’ingénierie détermine ce qui peut devenir réel.",button:"Entrer",note:"Recherche exploratoire · Résultats à valider",left:"Leiria · Portugal",right:"Plateforme de recherche indépendante · 2026",aria:"Choisir la langue"}
-};
-const buttons=[...document.querySelectorAll("[data-lang]")];
-function setLanguage(lang){
-const c=copy[lang];if(!c)return;
-document.documentElement.lang=lang==="pt"?"pt-PT":lang;
-document.getElementById("eyebrow").textContent=c.eyebrow;
-document.getElementById("message").textContent=c.message;
-document.getElementById("enter-label").textContent=c.button;
-document.getElementById("disclaimer").textContent=c.note;
-document.getElementById("bottom-left").textContent=c.left;
-document.getElementById("bottom-right").textContent=c.right;
-document.getElementById("enter").href="/"+lang+"/";
-document.querySelector(".languages").setAttribute("aria-label",c.aria);
-buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
-}
-buttons.forEach(b=>b.addEventListener("click",()=>setLanguage(b.dataset.lang)));
-})();
-</script>
-</body></html>
+<script defer src="/assets/entry-v3.js"></script>
+</body>
+</html>
