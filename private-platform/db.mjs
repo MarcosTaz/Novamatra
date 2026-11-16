@@ -184,5 +184,19 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='energy-recovery-studio'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='Interface V2 — Energy Recovery Studio')`);
 
+  // ERS E0.2: metadata only; 50 full studies and source stay in restricted Drive.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','E0.2 — campanha de 50 estudos analíticos',
+      '50 cenários sintéticos distintos, repartidos entre ar pressurizado, hidráulica, recuperação de calor, calor-para-eletricidade e regeneração cinética. Cada cenário tem auditoria por código de referência independente, 13 indicadores numéricos comparados, dois testes de sensibilidade e teste de eficiência nula: 50/50 PASS computacional. Paridade JS/Python 50/50. Cinco guardas IF97 bloqueadas fora dos 50. Não existem medições de campo, validações experimentais ou rentabilidades demonstradas. Relatório 53 páginas, 50 fichas e aplicação V2 com 58 presets, arquivados em NOVAMATRA_PRIVADO/ENERGY_RECOVERY_STUDIO/CAMPANHA_50_ESTUDOS_E02. Proibido divulgar o código, fazer contactos externos ou vender os resultados como auditoria sem autorização.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.2 — campanha de 50 estudos analíticos')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','E0.3 — 50 estudos de referência com dados reais',
+      'Substituir cenários sintéticos por fontes rastreáveis com medidas, datasets públicos ou casos de teste certificados; obter propriedades IF97 reais, referências numéricas independentes, erro versus medições e revisão por técnicos. Sem presumir validação física a partir da paridade de fórmulas.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.3 — 50 estudos de referência com dados reais')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
