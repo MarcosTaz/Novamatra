@@ -198,5 +198,19 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='energy-recovery-studio'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.3 — 50 estudos de referência com dados reais')`);
 
+  // ERS E0.2B: only confidential-project metadata; studies/software stored exclusively in private Drive.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','E0.2B — campanha de 500 estudos',
+      'Campanha computacional complementar: 500 novas configurações sintéticas = 100 arquétipos hipotéticos em cinco perfis cada; 100 por família (ar, hidráulica, calor útil, calor-para-eletricidade, regeneração). 500/500 comparação de 13 indicadores com código de referência separado; 1000 sensibilidades +/-10%, 500 limites de rendimento nulo, 500 monotonicidades, 500 paridades Python/JavaScript. 15 testes originais e navegação real com 558 presets PASS. 154 margens anuais positivas e 346 não positivas sob hipóteses fictícias; 0 ensaios físicos, 0 medições de campo, 0 referências externas quantitativas. Relatório 503 páginas, 500 fichas e software reservados no Google Drive NOVAMATRA_PRIVADO/ENERGY_RECOVERY_STUDIO/CAMPANHA_500_ESTUDOS_E02B. Não divulgar código, não contactar terceiros nem declarar validação externa.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.2B — campanha de 500 estudos')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','E0.3 — validação física e benchmarking externo',
+      'Executar casos de benchmark quantitativo de fonte independente; integrar propriedade IF97 real, modelos OEM e dados instrumentados de instalações; estabelecer erros percentuais e intervalos de incerteza. Preservar separação entre consistência computacional E0.2/E0.2B e validade física/comercial.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.3 — validação física e benchmarking externo')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
