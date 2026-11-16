@@ -212,5 +212,19 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='energy-recovery-studio'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.3 — validação física e benchmarking externo')`);
 
+  // ERS E0.3-REF: apenas o registo técnico resumido. Código e resultados completos no arquivo privado.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','E0.3-REF — benchmarks publicados e prova de escala',
+      'Referências externas publicadas: 28 verificações classificadas, incluindo 8/8 comparações de números verificáveis PASS, 14 pontos térmicos condicionais não preditivos, 5 IF97 bloqueados e 1 fotovoltaico fora de âmbito. Campanha adicional de carga: 1.000.000/1.000.000 cenários sintéticos PASS nos invariantes numéricos em 10 lotes com SHA-256. Não equivale a 1.000.000 medições ou benchmarks externos. Sem execução de concorrentes, sem medições de campo e sem certificação. Fontes, relatórios, scripts e hashes guardados exclusivamente em NOVAMATRA_PRIVADO/ENERGY_RECOVERY_STUDIO/BENCHMARKS_EXTERNOS_E03_REF; código não divulgado.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.3-REF — benchmarks publicados e prova de escala')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','E0.3 — validação preditiva e concorrencial',
+      'Implementar e comparar IF97 com referência oficial; calcular efetividade ε–NTU sem fornecer ε como entrada; obter casos com medições físicas e executar modelos de concorrentes sobre entradas idênticas, documentando métricas de erro e âmbito. A validação física e comercial permanece BLOQUEADA.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.3 — validação preditiva e concorrencial')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
