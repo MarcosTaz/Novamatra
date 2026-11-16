@@ -176,5 +176,13 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='energy-recovery-studio'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.4 — backend e licenciamento seguro')`);
 
+  // Apenas metadados do UX V2; ficheiros do produto exclusivamente no Drive privado.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','Interface V2 — Energy Recovery Studio',
+      'Nova interface grafite/preto com contornos violetas aplicada ao software offline E0.1. Navegação e controlos reais, gráficos paramétricos calculados, cenários, carteira local e exportação de relatório. Motor matemático original preservado sem alterações; 15 testes unitários, 308 cenários de paridade Python/JS e 18 verificações no Chromium passaram. Gráficos diários usam perfil assumido; sem medições reais ou certificação. Código, executável local, testes e capturas de navegador arquivados no Drive privado ENERGY_RECOVERY_STUDIO. Não publicar o código em GitHub público.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='Interface V2 — Energy Recovery Studio')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
