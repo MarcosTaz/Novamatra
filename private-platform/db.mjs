@@ -254,5 +254,19 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='energy-recovery-studio'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.5 — desbloqueio para parceria licenciada')`);
 
+  // ERS E0.6: Registo resumido. Código e documentação privados no Google Drive.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','E0.6 — preparação para licenciamento e parceiro',
+      'Pacote privado E0.6 com preservação integral E0.4 e E0.5; módulo de login local scrypt, sessões e CSRF, licenças assinadas Ed25519, verificação de royalties, selecção opcional de CoolProp IF97 MIT, guardas para validação entre equipamentos, inventário IP/OSS e cláusulas de licença. 42 testes Python + 3 subtestes PASS. IF97 oficial 6/12 PASS R1/R2, 6/12 BLOQUEADO R3/R5 por falta da dependência; 0 falhas. Chromium automático BLOQUEADO pelo ambiente. Titularidade jurídica, direitos datasets, validação multiequipamento, segurança pública e contratos assinados NÃO DEMONSTRADOS. Não está aprovado para venda com garantias nem exposição Internet; piloto local restrito somente. Arquivo completo: NOVAMATRA_PRIVADO/ENERGY_RECOVERY_STUDIO/DESBLOQUEIO_E06_PARCEIRO. Nenhum contacto externo e nenhum código novo publicado.',
+      'Concluído com limites'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.6 — preparação para licenciamento e parceiro')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','E0.7 — gates finais de direitos, engenharia e produção',
+      'Obter prova documental do titular e cessões; verificar licenças de dados e dependências, congelar release; instalar backend IF97 MIT e testar regiões 3/5; recolher pelo menos três equipamentos distintos por família com medição rastreável; testar UI, pentest, TLS, backups, GDPR e suporte; rever as minutas com jurista e aprovar por escrito qualquer contacto ou entrega a parceiro.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.7 — gates finais de direitos, engenharia e produção')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
