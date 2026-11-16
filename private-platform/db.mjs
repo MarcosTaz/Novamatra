@@ -129,5 +129,19 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='rf300-multirotor'
       AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G4 — otimização densidade versus perdas por estágio')`);
 
+  // RF300 P0.5: apenas metadados; código, catálogo e ensaios permanecem na pasta privada.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','P0.5 — selecção de geradores',
+      'Bancada RF300 virtual P0.5: biblioteca de seis perfis eléctricos, incluindo variantes Mabuchi derivadas de fichas em modo motor, escolha por troço e parâmetros de gerador personalizados. 43 testes Python PASS, quatro reconciliações browser/Python PASS e 144 cenários de software. Dados eléctricos condicionais, sem validação no modo gerador e sem acoplamento dinâmico da turbina. Ficheiros técnicos arquivados em NOVAMATRA_PRIVADO/RF300_MULTIROTOR e não publicados.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='rf300-multirotor'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.5 — selecção de geradores')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','G5 — medir curvas reais de geração',
+      'Identificar variantes exactas; medir FEM-rpm, resistência interna, eficiência, limites térmicos, torque de arranque, curvas carga-corrente e relação rotor-pressão-caudal-rotação. Validar custos de alimentação e electricidade líquida; não declarar capacidades de produção sem ensaios. Contactos externos e publicação de engenharia reservada exigem autorização.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='rf300-multirotor'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G5 — medir curvas reais de geração')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
