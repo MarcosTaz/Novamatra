@@ -143,5 +143,38 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='rf300-multirotor'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G5 — medir curvas reais de geração')`);
 
+  // ENERGY RECOVERY STUDIO E0.1 — metadados mínimos; documentação, código e dados no Drive privado.
+  // Independente do RF300 físico; sem mesclar implementações ou expor fontes técnicas.
+  await query(`INSERT INTO nm_projects(slug,title,summary,details,status,track,priority)
+    VALUES('energy-recovery-studio','ENERGY RECOVERY STUDIO',
+      'Plataforma multissetorial de triagem de oportunidades de aproveitamento energético.',
+      'Estudo computacional interno E0.1. Cálculos de triagem de energia, pressupostos editáveis e indicadores económicos condicionais; cinco famílias físicas simplificadas e interface opcional IF97. Software offline e ensaios sintéticos; sem validação de campo, certificação, licenciamento comercial ou promessas de poupança. O código permanece no arquivo NOVAMATRA_PRIVADO/ENERGY_RECOVERY_STUDIO e não no repositório público. O RF300 mantém-se como projeto autónomo.',
+      'Engenharia / testes pendentes','Software energético multissetorial','Alta')
+    ON CONFLICT(slug) DO NOTHING`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','E0.1 — software local e testes',
+      'Interface offline e motor Python concluídos para triagem multissetorial, com casos fictícios, exportação e contas condicionais. 15 testes unitários Python PASS; 308 casos de paridade Python/JavaScript PASS em 11 indicadores. Teste visual de navegador não confirmado; propriedades reais e aplicação física pendentes. Arquivo privado E0.1 preservado.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.1 — software local e testes')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','E0.2 — propriedades reais e integração de medições',
+      'Testar IF97 com a biblioteca oficial e estados de referência, introduzir perfis horários, curvas reais de bombas, compressores, turbinas, geradores e sistemas térmicos, e modelar limitações físicas. Sem afirmações de segurança ou economia sem validação.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.2 — propriedades reais e integração de medições')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','E0.3 — validação comparativa independente',
+      'Estabelecer casos de referência independentes, métricas de erro e proveniência, verificação das incertezas, auditoria de segurança e comparação entre plataformas e equipamentos existentes.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.3 — validação comparativa independente')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','E0.4 — backend e licenciamento seguro',
+      'Arquitetura de backend privado, segurança, backups, autenticação, controlo de direitos e modelo de licença. Não publicar código, contactar clientes ou vender sem aprovação explícita e as validações necessárias.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.4 — backend e licenciamento seguro')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
