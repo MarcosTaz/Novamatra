@@ -56,7 +56,7 @@
       <h1><span class="headline-first" id="headline1">O desconhecido</span><span class="headline-second" id="headline2">é o ponto de partida.</span></h1>
       <div class="rule" aria-hidden="true"></div>
       <p class="description" id="description">A NOVAMATRA é uma iniciativa independente de <strong>investigação e engenharia</strong>. Desenvolvemos ideias com método, discrição e uma convicção simples: antes de afirmar, é preciso demonstrar.</p>
-      <a class="contact" id="contact" href="mailto:marcos.moutinho.dev@gmail.com?subject=NOVAMATRA%20%E2%80%94%20Contacto%20institucional"><span id="contact-label">CONTACTO INSTITUCIONAL</span><span class="arr" aria-hidden="true">↗</span></a>
+      <a class="contact" id="contact" href="mailto:contacto@novamatra.com?subject=NOVAMATRA%20%E2%80%94%20Contacto%20institucional"><span id="contact-label">CONTACTO INSTITUCIONAL</span><span class="arr" aria-hidden="true">↗</span></a>
     </div>
     <div class="art" aria-hidden="true">
       <div class="glow"></div><div class="beam"></div><div class="orb"></div><div class="orbit"></div>
@@ -80,7 +80,7 @@
     document.getElementById('meta-description').content=d.meta;
     for(const [id,val] of [['brand-subtitle',d.sub],['kicker',d.kicker],['headline1',d.h1],['headline2',d.h2],['contact-label',d.contact],['footer-left',d.footer],['skip',d.skip]])document.getElementById(id).textContent=val;
     document.getElementById('description').innerHTML=d.description;
-    document.getElementById('contact').href='mailto:marcos.moutinho.dev@gmail.com?subject='+encodeURIComponent(d.subject);
+    document.getElementById('contact').href='mailto:contacto@novamatra.com?subject='+encodeURIComponent(d.subject);
     const buttons=document.querySelectorAll('[data-lang]');for(const b of buttons)b.setAttribute('aria-pressed',String(b.dataset.lang===lang));
     document.querySelector('.lang').setAttribute('aria-label',d.langs);
     try{sessionStorage.setItem('nm-lang',lang)}catch{}
