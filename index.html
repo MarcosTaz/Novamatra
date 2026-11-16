@@ -1,81 +1,93 @@
 <!doctype html>
 <html lang="pt-PT">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<meta name="theme-color" content="#101311" />
-<meta name="robots" content="index,follow" />
-<title>NOVAMATRA — Independent Engineering & Research</title>
-<meta name="description" content="NOVAMATRA — Estúdio independente de investigação e engenharia em Portugal. Hipóteses, sistemas e evidência." />
-<link rel="canonical" href="https://www.novamatra.com/" />
-<meta property="og:type" content="website" /><meta property="og:site_name" content="NOVAMATRA" /><meta property="og:title" content="NOVAMATRA — Independent Engineering & Research" /><meta property="og:description" content="The future deserves to be demonstrated." /><meta property="og:url" content="https://www.novamatra.com/" />
-<link rel="stylesheet" href="/assets/atelier-v4.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07090e">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="description" id="meta-description" content="NOVAMATRA é uma iniciativa independente de investigação e engenharia, sediada em Portugal. Investigação com rigor, discrição e visão de futuro.">
+  <link rel="canonical" href="https://www.novamatra.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NOVAMATRA">
+  <meta property="og:url" content="https://www.novamatra.com/">
+  <meta property="og:title" content="NOVAMATRA — Investigação independente">
+  <meta property="og:description" content="O desconhecido é o nosso ponto de partida.">
+  <title>NOVAMATRA — Investigação independente</title>
+  <style>
+    :root{color-scheme:dark;--bg:#07090e;--ink:#eeeef4;--muted:#a1a1b0;--fine:#737383;--edge:#292735;--violet:#a89bff;--gold:#cab89b;--s:clamp(1rem,2.5vw,2.4rem)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;min-height:100%}body{margin:0;min-height:100vh;min-height:100dvh;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 77% 39%,rgba(92,73,164,.16),transparent 39%),radial-gradient(ellipse at 11% 88%,rgba(48,42,87,.13),transparent 38%),linear-gradient(137deg,#0c0d13 0%,#07090e 58%,#080812 100%);pointer-events:none}
+    body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.2;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:90px 90px;mask-image:linear-gradient(to right,transparent 7%,black 96%)}
+    a{color:inherit}button{font:inherit}.skip{position:absolute;top:-100px;left:20px;padding:12px 18px;background:#fff;color:#000;z-index:99}.skip:focus{top:16px}
+    .page{min-height:100vh;min-height:100dvh;max-width:1920px;margin:auto;display:flex;flex-direction:column;padding:clamp(22px,3.3vw,54px) clamp(24px,5.5vw,106px) 26px;position:relative;overflow:hidden}
+    .page::before{content:"";position:absolute;top:calc(50% - 470px);right:clamp(-280px,-10vw,-70px);width:930px;height:930px;border:1px solid rgba(178,158,235,.06);border-radius:50%;pointer-events:none}
+    .header{display:flex;align-items:center;justify-content:space-between;gap:24px;z-index:2}.brand{display:inline-flex;align-items:center;gap:16px;text-decoration:none}.brand-symbol{width:45px;height:45px;filter:drop-shadow(0 0 20px rgba(168,155,255,.13))}.brand-name{display:block;letter-spacing:.19em;font-size:clamp(1.1rem,1.7vw,1.5rem);font-weight:550;line-height:1.06}.brand-small{display:block;font-size:.54rem;letter-spacing:.34em;color:#aaa8b9;margin-top:7px;font-weight:500}
+    .lang{display:flex;align-items:center;gap:10px;border:1px solid rgba(177,169,221,.19);padding:6px 9px;border-radius:24px;background:rgba(18,17,28,.45)}.lang button{cursor:pointer;border:0;border-radius:16px;color:#8e8c9e;background:transparent;font-size:11px;letter-spacing:.08em;padding:8px 10px;font-weight:650}.lang button[aria-pressed="true"]{background:rgba(166,150,245,.14);color:#eeebff}.lang button:focus-visible,.contact:focus-visible{outline:2px solid #d0beff;outline-offset:3px}
+    main{flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,.9fr);align-items:center;gap:clamp(28px,4vw,70px);padding:clamp(55px,8vh,105px) 0 clamp(70px,8vh,120px)}.copy{position:relative;z-index:1;max-width:760px}.kicker{display:flex;align-items:center;gap:15px;color:var(--gold);letter-spacing:.26em;font-size:clamp(.58rem,.78vw,.72rem);font-weight:700;text-transform:uppercase}.kicker::before{content:"";width:31px;height:1px;background:var(--gold)}
+    h1{font-size:clamp(3.5rem,5.5vw,7rem);letter-spacing:-.085em;font-weight:480;line-height:.99;margin:32px 0 34px}.headline-first,.headline-second{display:block}.headline-second{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;color:#bbb4e9;letter-spacing:-.075em;font-size:.81em;line-height:1.12;margin-top:.06em}
+    .rule{height:1px;max-width:390px;background:linear-gradient(to right,rgba(203,190,249,.75),rgba(203,190,249,.0));margin-bottom:29px}.description{font-size:clamp(1rem,1.25vw,1.24rem);font-weight:350;line-height:1.77;max-width:570px;color:#b1b1c1;letter-spacing:.008em;margin:0 0 44px}.description strong{color:#e1dfee;font-weight:500}
+    .contact{display:inline-flex;align-items:center;gap:32px;padding:17px 21px;border:1px solid #59516f;letter-spacing:.15em;text-decoration:none;text-transform:uppercase;font-size:.7rem;font-weight:700;transition:border-color .22s,background .22s,transform .22s}.contact:hover{background:rgba(148,126,217,.11);border-color:#ad9de8;transform:translateY(-2px)}.contact .arr{font-size:1.2rem;font-weight:300;letter-spacing:0}
+    .art{height:min(66vh,700px);min-height:390px;position:relative;display:grid;place-items:center;isolation:isolate}.orb{width:min(100%,610px);aspect-ratio:1;position:absolute;border:1px solid rgba(209,194,255,.12);border-radius:50%;transform:rotate(-17deg);background:radial-gradient(circle at 48% 39%,rgba(164,146,227,.045),transparent 58%)}.orb::before,.orb::after{content:"";position:absolute;inset:12%;border:1px solid rgba(200,187,245,.12);border-radius:50%;transform:rotate(24deg) scaleY(.8)}.orb::after{inset:28%;transform:none;border-color:rgba(203,188,255,.07)}
+    .orbit{position:absolute;width:93%;aspect-ratio:1;border:1px solid rgba(199,183,241,.11);border-radius:50%;transform:rotate(26deg) scaleY(.29)}.orbit::before{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:var(--violet);top:15%;right:15%;box-shadow:0 0 25px 4px rgba(168,155,255,.55)}
+    .monogram{width:min(58%,350px);height:auto;z-index:2;filter:drop-shadow(0 16px 30px rgba(151,137,216,.12))}.monogram path{stroke-linejoin:bevel}
+    .art-mark{position:absolute;right:8%;bottom:6%;color:#777382;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.63rem;letter-spacing:.16em;text-align:right;line-height:1.8}.beam{position:absolute;inset:50% 0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(194,178,242,.15),transparent);transform:rotate(-36deg);filter:blur(1px)}.glow{position:absolute;inset:20%;z-index:-1;background:radial-gradient(ellipse,rgba(113,87,208,.18),transparent 70%);filter:blur(35px)}
+    .footer{display:flex;justify-content:space-between;align-items:end;gap:15px;z-index:2;padding-top:22px;border-top:1px solid rgba(189,179,219,.13);color:#817e90;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase}.footer-left{display:flex;align-items:center;gap:10px}.dot{width:5px;height:5px;border-radius:50%;background:#b6a6df;box-shadow:0 0 12px rgba(159,141,231,.7)}.footer-end{color:#b3a6bb}
+    @media(min-width:1550px){main{grid-template-columns:1.04fr .96fr}.art{height:670px}}
+    @media(max-width:850px){.page{padding:24px 28px 24px}.header{gap:10px}.brand-symbol{width:36px;height:36px}.brand-name{font-size:1.07rem}.brand-small{font-size:.44rem}.lang{gap:2px}.lang button{padding:8px}main{grid-template-columns:1fr;position:relative;padding:70px 0 55px;min-height:660px}.copy{max-width:680px}.art{position:absolute;right:-38%;top:4%;height:600px;min-height:0;width:75%;opacity:.27;pointer-events:none}h1{font-size:clamp(3.2rem,9vw,6rem)}.description{max-width:610px}.footer{font-size:.58rem}}
+    @media(max-width:480px){.page{padding:22px 21px 22px}.brand{gap:9px}.brand-symbol{width:31px;height:31px}.brand-name{font-size:.87rem;letter-spacing:.13em}.brand-small{font-size:.39rem;letter-spacing:.18em}.lang button{font-size:.61rem;padding:6px}.header{align-items:center}main{min-height:630px;padding:78px 0 56px}.kicker{letter-spacing:.12em;font-size:.54rem}h1{font-size:clamp(3.1rem,11.5vw,4.8rem);margin:27px 0}.description{font-size:1.02rem;line-height:1.7}.art{width:105%;right:-48%;top:11%;opacity:.22}.footer{font-size:.53rem;letter-spacing:.07em;flex-wrap:wrap}.footer-end{margin-left:auto}}
+    @media(prefers-reduced-motion:no-preference){.art .orb{animation:rotate 52s linear infinite}.art .orbit{animation:spin 64s linear infinite}@keyframes rotate{to{transform:rotate(343deg)}}@keyframes spin{to{transform:rotate(386deg) scaleY(.29)}}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  </style>
 </head>
 <body>
-<main class="stage" id="main">
-  <div class="ambient" aria-hidden="true"></div><div class="filmgrain" aria-hidden="true"></div>
-  <header class="masthead">
-    <a class="identity" href="#main" aria-label="NOVAMATRA — Início">
-      <svg viewBox="0 0 42 42" width="41" height="41" fill="none" aria-hidden="true"><path d="M7.5 35 21.6 7h6.1L13.9 35z" fill="#E7E1D5"/><path d="m24.8 18 10 17h-7.2L21.4 24z" fill="#B6A587"/><path d="M18 35h6" stroke="#E7E1D5" stroke-width="1.2"/></svg>
-      <span class="wordmark">NOVAMATRA<small>RESEARCH &amp; ENGINEERING</small></span>
+<a class="skip" href="#conteudo" id="skip">Saltar para o conteúdo</a>
+<div class="page">
+  <header class="header">
+    <a class="brand" href="/" aria-label="NOVAMATRA — início">
+      <svg class="brand-symbol" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 44 25 7h5L11 44Z" fill="#eee9f6"/><path d="m25.7 22 14.7 22h5.7L29.3 15.3Z" fill="#b6a2fa"/><path d="M18.5 44h14" stroke="#eee9f6" stroke-width="1.6"/></svg>
+      <span><span class="brand-name">NOVAMATRA</span><span class="brand-small" id="brand-subtitle">INDEPENDENT RESEARCH</span></span>
     </a>
-    <div class="mast-center" id="mast-center">INDEPENDENT ENGINEERING HOUSE</div>
-    <nav class="languages" aria-label="Idioma">
-      <button class="selected" type="button" data-lang="pt" aria-pressed="true">PT</button><span>/</span>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button><span>/</span>
-      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
-    </nav>
+    <nav class="lang" aria-label="Escolher idioma"><button type="button" data-lang="pt" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="fr" aria-pressed="false">FR</button></nav>
   </header>
-  <div class="accent-top" aria-hidden="true"></div>
-  <section class="hero" aria-labelledby="headline">
+  <main id="conteudo">
     <div class="copy">
-      <div class="pretitle"><span class="preno">N—001</span><span class="separator"></span><span id="pretitle">INVESTIGAÇÃO INDEPENDENTE · PORTUGAL</span></div>
-      <h1 id="headline"><span id="line-one">O futuro,</span><em id="line-two">por demonstrar.</em></h1>
-      <div class="fine-rule"></div>
-      <p class="intro" id="intro">Antes de existir um produto, existe uma pergunta.<br>Antes de uma promessa, exigimos evidência.</p>
-      <a class="entrance" id="entrance" href="/pt/"><span id="entrance-label">ENTRAR NO UNIVERSO NOVAMATRA</span><span aria-hidden="true" class="button-arrow">↗</span></a>
-      <p class="subnote" id="subnote">A exploração começa por escolha. Sem redirecionamentos automáticos.</p>
+      <div class="kicker" id="kicker">INVESTIGAÇÃO INDEPENDENTE · PORTUGAL</div>
+      <h1><span class="headline-first" id="headline1">O desconhecido</span><span class="headline-second" id="headline2">é o ponto de partida.</span></h1>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="description" id="description">A NOVAMATRA é uma iniciativa independente de <strong>investigação e engenharia</strong>. Desenvolvemos ideias com método, discrição e uma convicção simples: antes de afirmar, é preciso demonstrar.</p>
+      <a class="contact" id="contact" href="mailto:contacto@novamatra.com?subject=NOVAMATRA%20%E2%80%94%20Contacto%20institucional"><span id="contact-label">CONTACTO INSTITUCIONAL</span><span class="arr" aria-hidden="true">↗</span></a>
     </div>
-    <div class="artifact" aria-hidden="true">
-      <div class="artifact-light"></div>
-      <svg class="sculpture" viewBox="0 0 820 900" xmlns="http://www.w3.org/2000/svg" role="presentation">
-        <defs>
-          <linearGradient id="platinum" x1="0" y1=".4" x2="1" y2=".6"><stop offset="0" stop-color="#353c3b"/><stop offset=".07" stop-color="#b5b9b4"/><stop offset=".15" stop-color="#545d5b"/><stop offset=".34" stop-color="#a1a4a0"/><stop offset=".39" stop-color="#414a49"/><stop offset=".55" stop-color="#21292a"/><stop offset=".77" stop-color="#959d9b"/><stop offset=".92" stop-color="#353d3d"/><stop offset="1" stop-color="#151d1c"/></linearGradient>
-          <linearGradient id="warmmetal" x1="0" y1="0" x2="1" y2=".5"><stop offset="0" stop-color="#131c1d"/><stop offset=".17" stop-color="#565a53"/><stop offset=".26" stop-color="#ded4bf"/><stop offset=".37" stop-color="#605e53"/><stop offset=".5" stop-color="#212927"/><stop offset=".74" stop-color="#a99d87"/><stop offset=".85" stop-color="#3b3e38"/><stop offset="1" stop-color="#14191a"/></linearGradient>
-          <linearGradient id="side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0e1718"/><stop offset=".45" stop-color="#616967"/><stop offset="1" stop-color="#141b1b"/></linearGradient>
-          <linearGradient id="top" x1="0" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#d5d0c4"/><stop offset=".4" stop-color="#636c6b"/><stop offset="1" stop-color="#191d1e"/></linearGradient>
-          <linearGradient id="glint" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".52" stop-color="#fff8e5" stop-opacity=".72"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-          <filter id="drop" x="-40%" y="-25%" width="180%" height="180%"><feGaussianBlur stdDeviation="34" /></filter>
-          <filter id="metalgrit"><feTurbulence baseFrequency=".44" numOctaves="2" seed="8" result="noise"/><feColorMatrix in="noise" type="saturate" values="0" result="gray"/><feComponentTransfer in="gray"><feFuncA type="linear" slope=".10"/></feComponentTransfer></filter>
-          <clipPath id="monoclip"><path d="M206 164H306V721H206Z M288 164H382L567 721H475Z M554 164H653V721H554Z"/></clipPath>
-        </defs>
-        <ellipse cx="430" cy="780" rx="290" ry="35" fill="#000" opacity=".67" filter="url(#drop)"/>
-        <g class="monument">
-          <path d="M206 164 225 146H324L306 164Z" fill="url(#top)"/>
-          <path d="M206 164 225 146V702L206 721Z" fill="#171f20"/>
-          <path d="M306 164 324 146V702L306 721Z" fill="url(#side)"/>
-          <path d="M206 164H306V721H206Z" fill="url(#platinum)"/>
-          <path d="M206 164 206 721" stroke="#d8d9d0" stroke-opacity=".41" stroke-width="1.3"/>
-          <path d="M306 164 306 721" stroke="#070d0e" stroke-opacity=".8" stroke-width="4"/>
-          <path d="M288 164 306 146H401L382 164Z" fill="url(#top)"/>
-          <path d="M382 164 401 146 586 703 567 721Z" fill="#151b1b"/>
-          <path d="M288 164H382L567 721H475Z" fill="url(#warmmetal)"/>
-          <path d="M299 164 486 721" stroke="#eee8d6" stroke-width="2.2" stroke-opacity=".34"/>
-          <path d="M379 164 564 721" stroke="#fff3df" stroke-width="1" stroke-opacity=".42"/>
-          <path d="M554 164 573 146H672L653 164Z" fill="url(#top)"/>
-          <path d="M653 164 672 146V702L653 721Z" fill="#1c2524"/>
-          <path d="M554 164H653V721H554Z" fill="url(#platinum)"/>
-          <path d="M554 164V721" stroke="#d8d5c7" stroke-opacity=".33" stroke-width="1.5"/>
-          <path d="M650 164V721" stroke="#faf2e1" stroke-opacity=".22" stroke-width="1"/>
-          <rect x="180" y="130" width="500" height="620" fill="#fff" filter="url(#metalgrit)" clip-path="url(#monoclip)" opacity=".7"/>
-          <rect x="206" y="164" width="45" height="557" fill="url(#glint)" class="sheen" opacity=".2"/>
-        </g>
-        <path d="M170 771H675" stroke="#b9a98d" stroke-width="1" opacity=".23"/>
-      </svg>
-      <div class="material-label"><span>FORM STUDY / 001</span><span class="tiny-line"></span><span>DIGITAL SCULPTURE · LIGHT · FORM</span></div>
+    <div class="art" aria-hidden="true">
+      <div class="glow"></div><div class="beam"></div><div class="orb"></div><div class="orbit"></div>
+      <svg class="monogram" viewBox="0 0 400 510" xmlns="http://www.w3.org/2000/svg" fill="none"><defs><linearGradient id="a" x1=".1" x2="1" y1="0" y2=".9"><stop stop-color="#eee9f7"/><stop offset=".35" stop-color="#827c94"/><stop offset=".67" stop-color="#d8cfec"/><stop offset="1" stop-color="#766aa4"/></linearGradient><linearGradient id="b" x1="0" x2="1" y1=".2" y2=".8"><stop stop-color="#4e475e"/><stop offset=".45" stop-color="#b7a8ed"/><stop offset="1" stop-color="#302946"/></linearGradient></defs><path d="M40 431 199 76h54L92 431Z" fill="url(#a)"/><path d="m197 202 128 229h49L228 151Z" fill="url(#b)"/><path d="M134 431h127" stroke="#d5cdeb" stroke-width="4"/><path d="M40 431 199 76h54L92 431Z" stroke="#f4eefe" stroke-opacity=".3" stroke-width="1"/></svg>
+      <div class="art-mark">NOVAMATRA / N—01<br>RESEARCH · FORM · PURPOSE</div>
     </div>
-  </section>
-  <footer class="foot"><span class="foot-left"><i aria-hidden="true"></i><span id="foot-left">INVESTIGAÇÃO EM CURSO</span></span><span class="foot-mid" id="foot-mid">CIÊNCIA. ENGENHARIA. MATÉRIA.</span><span>LEIRIA, PORTUGAL <b> / </b> MMXXVI</span></footer>
-</main>
-<script defer src="/assets/atelier-v4.js"></script>
-</body></html>
+  </main>
+  <footer class="footer"><span class="footer-left"><span class="dot" aria-hidden="true"></span><span id="footer-left">INVESTIGAÇÃO EM DESENVOLVIMENTO</span></span><span id="footer-right" class="footer-end">LEIRIA · PORTUGAL / © 2026 NOVAMATRA</span></footer>
+</div>
+<script>
+(()=>{
+  'use strict';
+  const content={
+    pt:{html:'pt-PT',title:'NOVAMATRA — Investigação independente',meta:'NOVAMATRA é uma iniciativa independente de investigação e engenharia, sediada em Portugal. Investigação com rigor, discrição e visão de futuro.',sub:'INDEPENDENT RESEARCH',kicker:'INVESTIGAÇÃO INDEPENDENTE · PORTUGAL',h1:'O desconhecido',h2:'é o ponto de partida.',description:'A NOVAMATRA é uma iniciativa independente de <strong>investigação e engenharia</strong>. Desenvolvemos ideias com método, discrição e uma convicção simples: antes de afirmar, é preciso demonstrar.',contact:'CONTACTO INSTITUCIONAL',subject:'NOVAMATRA — Contacto institucional',footer:'INVESTIGAÇÃO EM DESENVOLVIMENTO',skip:'Saltar para o conteúdo',langs:'Escolher idioma'},
+    en:{html:'en',title:'NOVAMATRA — Independent Research',meta:'NOVAMATRA is an independent research and engineering initiative based in Portugal. Inquiry, rigour and discretion.',sub:'INDEPENDENT RESEARCH',kicker:'INDEPENDENT RESEARCH · PORTUGAL',h1:'The unknown',h2:'is where we begin.',description:'NOVAMATRA is an independent <strong>research and engineering</strong> initiative. We develop ideas with method, discretion and one simple conviction: before making a claim, we must demonstrate it.',contact:'INSTITUTIONAL CONTACT',subject:'NOVAMATRA — Institutional inquiry',footer:'RESEARCH IN DEVELOPMENT',skip:'Skip to content',langs:'Select language'},
+    fr:{html:'fr',title:'NOVAMATRA — Recherche indépendante',meta:'NOVAMATRA est une initiative indépendante de recherche et d’ingénierie basée au Portugal. Rigueur, discrétion et vision.',sub:'INDEPENDENT RESEARCH',kicker:'RECHERCHE INDÉPENDANTE · PORTUGAL',h1:'L’inconnu',h2:'est notre point de départ.',description:'NOVAMATRA est une initiative indépendante de <strong>recherche et d’ingénierie</strong>. Nous développons des idées avec méthode, discrétion et une conviction simple : avant d’affirmer, il faut démontrer.',contact:'CONTACT INSTITUTIONNEL',subject:'NOVAMATRA — Contact institutionnel',footer:'RECHERCHE EN DÉVELOPPEMENT',skip:'Aller au contenu',langs:'Choisir la langue'}
+  };
+  function apply(lang){
+    const d=content[lang]||content.pt;
+    document.documentElement.lang=d.html;document.title=d.title;
+    document.getElementById('meta-description').content=d.meta;
+    for(const [id,val] of [['brand-subtitle',d.sub],['kicker',d.kicker],['headline1',d.h1],['headline2',d.h2],['contact-label',d.contact],['footer-left',d.footer],['skip',d.skip]])document.getElementById(id).textContent=val;
+    document.getElementById('description').innerHTML=d.description;
+    document.getElementById('contact').href='mailto:contacto@novamatra.com?subject='+encodeURIComponent(d.subject);
+    const buttons=document.querySelectorAll('[data-lang]');for(const b of buttons)b.setAttribute('aria-pressed',String(b.dataset.lang===lang));
+    document.querySelector('.lang').setAttribute('aria-label',d.langs);
+    try{sessionStorage.setItem('nm-lang',lang)}catch{}
+  }
+  document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>apply(b.dataset.lang)));
+  let lang='pt';try{const v=sessionStorage.getItem('nm-lang');if(content[v])lang=v}catch{}apply(lang);
+})();
+</script>
+</body>
+</html>
