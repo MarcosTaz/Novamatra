@@ -240,5 +240,19 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='energy-recovery-studio'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.5 — IF97 completo e validação cruzada entre equipamentos')`);
 
+  // ERS E0.5-N: só metadados. NDA, contratos, inventário e ZIP integral no Drive privado.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','E0.5-N — preparação negocial e royalties',
+      'Foi criado dossier interno para parceria de desenvolvimento e licenciamento com royalties. Inclui ficha comercial sem código, NDA, term sheet, minuta de licença editável, regras de auditoria de receitas, gates técnicos/jurídicos, modelo económico condicional, inventário 33 ficheiros e verificação de 32 hashes do E0.4. ZIP E0.4 reexecutado sem alterações; retorno 0. Titularidade jurídica e direitos de terceiros ainda por verificar; sem assinaturas, contactos, compradores ou royalties. Pacote privado em NOVAMATRA_PRIVADO/ENERGY_RECOVERY_STUDIO/TRANSFERENCIA_E05_ROYALTIES. Não divulgar código e não iniciar contacto externo sem autorização.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.5-N — preparação negocial e royalties')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','E0.5 — desbloqueio para parceria licenciada',
+      'Confirmar titular jurídico do código e autorizações de dados; fazer due diligence das dependências, validar benchmarks físicos multiequipamento; corrigir IF97 R3/R5, testar UI e segurança; confirmar limites jurídicos e fiscais dos royalties. Depois pedir autorização expressa para contactar candidatos. Não confundir preparação com contrato assinado ou produto vendável.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.5 — desbloqueio para parceria licenciada')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
