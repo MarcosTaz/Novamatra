@@ -268,5 +268,27 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='energy-recovery-studio'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.7 — gates finais de direitos, engenharia e produção')`);
 
+
+  // ENERGY CORE H1 R02 — apenas metadados no repositório. CAD/PDF/STL permanecem privados.
+  // A inicialização é idempotente e não substitui edições efetuadas no painel do proprietário.
+  await query(`INSERT INTO nm_projects(slug,title,summary,details,status,track,priority)
+    VALUES('energy-core-h1-r02','ENERGY CORE / HUMANPOWER — H1 R02',
+      'Sistema experimental modular de conversão energética com acionamento humano e interfaces futuras para fontes exteriores.',
+      'Revisão R02: dossier de engenharia preliminar com cinco pranchas A3, placa-base P-001 desenhada para fabrico experimental, CAD paramétrico e cálculos de referência. Gerador, transmissão, proteções e validação eletromecânica permanecem pendentes. Nenhuma potência foi medida num protótipo físico. Os ficheiros técnicos CAD, STL, PDF e ZIP permanecem no arquivo privado e não são publicados neste repositório.',
+      'Engenharia / testes pendentes','Energia eletromecânica','Alta')
+    ON CONFLICT(slug) DO NOTHING`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','H1 R02 — pacote técnico preliminar',
+      'Cinco pranchas A3 e modelo CAD produzidos. Primeira peça de bancada P-001 definida preliminarmente. Ainda não existe validação de funcionamento, segurança ou produção da máquina integral.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='energy-core-h1-r02'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='H1 R02 — pacote técnico preliminar')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','R03 — fecho da engenharia do gerador e da transmissão',
+      'Selecionar gerador com curvas medidas e geometria de montagem; dimensionar binário, veio, rolamentos, polias, correias, proteções e conversão elétrica; atualizar BOM e desenhos de fabrico; definir ensaios independentes de potência e eficiência.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='energy-core-h1-r02'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='R03 — fecho da engenharia do gerador e da transmissão')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
