@@ -226,5 +226,19 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='energy-recovery-studio'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.3 — validação preditiva e concorrencial')`);
 
+  // E0.4: apenas metadados de execução; fonte e datasets exclusivamente no Drive privado.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','E0.4 — IF97, permutadores e curvas medidas',
+      'Entrega única de engenharia executável: IF97 nativo R1/R2/R4 (30/30 pontos de tabelas oficiais PASS; R3/R5 bloqueadas), permutadores ε-NTU com 18 observações laboratoriais publicadas e predição LOOCV intraequipamento (MAE saída quente 0,779 C; fria 3,625 C; desvio mediano balanço energético publicado 47,23% — limitação grave), curva de bomba medida com 13 pontos e 11 LOO interiores (MAPE altura 0,358%; MAE rendimento 0,258 pontos percentuais). 34 testes unitários e 11 testes HTTP PASS; renderização Chromium NÃO TESTADA por bloqueio do ambiente. Modelo E0.1 e aplicações anteriores preservados. Código e dados técnicos somente no arquivo NOVAMATRA_PRIVADO/ENERGY_RECOVERY_STUDIO/VALIDACAO_PREDITIVA_E04. Sem validação multiequipamento, ensaio do RF300, superioridade sobre concorrentes, certificação ou capacidade comercial.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.4 — IF97, permutadores e curvas medidas')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','E0.5 — IF97 completo e validação cruzada entre equipamentos',
+      'Implementar IF97 R3/R5 e estados bifásicos completos, obter medidas HX com balanço de energia consistente, testar parâmetros em equipamentos distintos fora do conjunto de calibração, aferir turbinas/geradores com curvas físicas reais, validar UI em Chromium local e realizar comparações de concorrentes sob entradas idênticas. Sem certificação ou alegações de eficiência até evidência externa suficiente.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='energy-recovery-studio'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='E0.5 — IF97 completo e validação cruzada entre equipamentos')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
