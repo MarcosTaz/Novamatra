@@ -1,0 +1,26 @@
+name: NOVAMATRA LUMICOASTER project registration
+on:
+  pull_request:
+    paths:
+      - 'private-platform/db.mjs'
+      - 'private-platform/tests/lumicoaster-seed.test.mjs'
+      - '.github/workflows/lumicoaster-project.yml'
+  push:
+    paths:
+      - 'private-platform/db.mjs'
+      - 'private-platform/tests/lumicoaster-seed.test.mjs'
+      - '.github/workflows/lumicoaster-project.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: node --check private-platform/db.mjs
+      - name: Validate LUMICOASTER seed without database writes
+        run: node --test private-platform/tests/lumicoaster-seed.test.mjs
