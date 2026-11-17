@@ -290,5 +290,27 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='energy-core-h1-r02'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='R03 — fecho da engenharia do gerador e da transmissão')`);
 
+
+  // LUMICOASTER P0.1: metadados mínimos no repositório público.
+  // CAD, eletrónica e validação ficam em NOVAMATRA_PRIVADO/LUMICOASTER.
+  await query(`INSERT INTO nm_projects(slug,title,summary,details,status,track,priority)
+    VALUES ('novamatra-lumicoaster','NOVAMATRA LUMICOASTER',
+      'Mini projeto: apoios de copos de mesa com iluminação LED que acende quando o copo exerce peso.',
+      'P0.1 (17/11/2026): conceito de produto, dossier técnico de bancada, CAD paramétrico, 3 STL de geometria fechada e cálculos elétricos com verificações automatizadas. Solução de referência 5 V por USB-C, interruptor normalmente aberto e quatro LEDs. Ainda sem protótipo físico, força de ativação calibrada, resistência a derrames, certificação, custo industrial ou marca verificados. Dossier e CAD completos no arquivo privado NOVAMATRA_PRIVADO/LUMICOASTER; nenhum contacto externo autorizado.',
+      'Engenharia / testes pendentes','Acessórios de mesa','Baixa')
+    ON CONFLICT(slug) DO NOTHING`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','P0.1 — desenho preliminar e verificação de software',
+      'Três peças em CAD paramétrico e STL analisadas como malhas fechadas; três testes matemáticos de dimensionamento elétrico concluídos. Sem confirmação de impressão, encaixes, circuito físico ou funcionamento com copo.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='novamatra-lumicoaster'
+      AND NOT EXISTS (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.1 — desenho preliminar e verificação de software')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','P0.2 — ensaio do peso, segurança e custos',
+      'Imprimir protótipo, escolher microswitch por força e curso, ajustar quatro apoios elastoméricos e batentes, medir acionamento para cargas de 50 a 900 g no centro e nas bordas, testar 1000 ciclos, avaliar estabilidade, temperatura, derrames e limpeza; obter BOM e custo medidos. Não anunciar produto apto para venda antes da validação.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='novamatra-lumicoaster'
+      AND NOT EXISTS (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.2 — ensaio do peso, segurança e custos')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
