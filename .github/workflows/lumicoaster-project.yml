@@ -4,11 +4,13 @@ on:
     paths:
       - 'private-platform/db.mjs'
       - 'private-platform/tests/lumicoaster-seed.test.mjs'
+      - 'private-platform/tests/lumicoaster-sizes.test.mjs'
       - '.github/workflows/lumicoaster-project.yml'
   push:
     paths:
       - 'private-platform/db.mjs'
       - 'private-platform/tests/lumicoaster-seed.test.mjs'
+      - 'private-platform/tests/lumicoaster-sizes.test.mjs'
       - '.github/workflows/lumicoaster-project.yml'
 permissions:
   contents: read
@@ -23,4 +25,4 @@ jobs:
       - name: Check JavaScript syntax
         run: node --check private-platform/db.mjs
       - name: Validate LUMICOASTER seed without database writes
-        run: node --test private-platform/tests/lumicoaster-seed.test.mjs
+        run: node --test private-platform/tests/lumicoaster-seed.test.mjs private-platform/tests/lumicoaster-sizes.test.mjs
