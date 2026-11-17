@@ -328,5 +328,20 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='novamatra-lumicoaster'
       AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.3 — validar copos reais e mecanismo de acionamento')`);
 
+
+  // LUMICOASTER P0.4: somente objetivos e custos indicativos; documentação integral em Drive privado.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','P0.4 — redesenho económico',
+      'Revisão de custos para produzir em série: duas peças de PETG, até dois LEDs, contacto normalmente aberto sob peso e alimentação 5 V partilhada. Custo indicativo de materiais 0,88 a 1,89 EUR/unidade em cenário de lote 100, sem montagem, fonte 5 V, transporte e certificação. Valores de orçamento, não cotação nem custo validado; mecanismo, CAD de duas peças e desempenho ainda não construídos. Dossier no arquivo privado NOVAMATRA_PRIVADO/LUMICOASTER/P04.',
+      'Concluído com limites'
+    FROM nm_projects p WHERE p.slug='novamatra-lumicoaster'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.4 — redesenho económico')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','P0.4.1 — validar construção low-cost',
+      'Redesenhar e imprimir duas peças, medir força de ativação e falsos contactos com copos vazios e cheios, proteger eletrónica de salpicos, provar rigidez e durabilidade do contacto; medir consumo e recalcular custo real de materiais e montagem com fornecedores. Avaliar alternativa autónoma CR2032/LED âmbar com compartimento à prova de acesso infantil; não ligar LED branco 3,2V diretamente a pilha de 3V. Sem contacto comercial ou venda antes de provas.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='novamatra-lumicoaster'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.4.1 — validar construção low-cost')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
