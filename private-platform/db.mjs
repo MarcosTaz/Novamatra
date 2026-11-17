@@ -312,5 +312,21 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='novamatra-lumicoaster'
       AND NOT EXISTS (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.2 — ensaio do peso, segurança e custos')`);
 
+
+  // LUMICOASTER P0.2 — tamanho exterior não é diâmetro da boca do copo.
+  // Apenas metadados de catálogo; ficheiros de engenharia no Drive privado.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','P0.2 — famílias dimensionais S/M/L',
+      'Tamanhos definidos para pés de copos: S Ø90 exterior / Ø78 prato / pé até Ø70; M Ø100 / Ø88 / até Ø80; L Ø110 / Ø98 / até Ø90 mm. CAD paramétrico e nove STL fechados geometricamente, testes elétricos matemáticos 3/3 PASS. Compatibilidade centrada teórica; sem copos físicos, medidas de atrito, impermeabilização, força de acionamento ou custo industrial demonstrados. Projeto técnico privado LUMICOASTER P0.2.',
+      'Concluído'
+    FROM nm_projects p WHERE p.slug='novamatra-lumicoaster'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.2 — famílias dimensionais S/M/L')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','P0.3 — validar copos reais e mecanismo de acionamento',
+      'Medir pés e massas vazias/cheias de copos de eventos, incluindo flutes, vinho, cocktail, whisky e água. Validar sensibilidade e curso do microswitch com cargas no centro e quatro quadrantes, estabilidade contra tombamento, repetibilidade e segurança com condensação e salpicos; sem venda antes de ensaio e avaliação regulamentar.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='novamatra-lumicoaster'
+      AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.3 — validar copos reais e mecanismo de acionamento')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
