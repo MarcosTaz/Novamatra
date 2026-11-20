@@ -380,6 +380,15 @@ export async function initialize(){
     AND NOT EXISTS (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='V0.8 — aquecimento bidimensional e verificação numérica')`);
 
 
+
+  // F-01 V0.12: so metadados, sem pormenores de CAD ou filme no repositorio publico.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','V0.12 — caixa de conservacao com saquetas de alta barreira',
+      'Projeto de embalagem primaria selada em 4 unidades independentes dentro de caixa exterior de protecao. Objetivo preliminar: 12 meses de conservacao de sticks fechados, SEM VALIDACAO EXPERIMENTAL. Modelo de 192 cenarios de permeacao hipotetica e 16 verificacoes de consistencia PASS. Humidade da madeira tratada em base humida; sem prova de estanquidade, migracao de odores, estabilidade fisica, duracao de chama ou validade comercial. Pacote reservado em NOVAMATRA_PRIVADO/TERMOQUIMICA_F01_MP01/NOVAMATRA_F01_V012_CAIXA_ESTANQUE_VALIDADE_P0.zip. O ramo MP-01 mantem autonomia.',
+      'Concluído com limites'
+    FROM nm_projects p WHERE p.slug='f01-flame-sticks'
+    AND NOT EXISTS (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='V0.12 — caixa de conservacao com saquetas de alta barreira')`);
+
   // F-01 V0.10 — metadados apenas; resultados numericos inteiros no Drive privado.
   await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
     SELECT p.id,'marco','V0.10 — estudo comparativo de 3 a 7 faces',
