@@ -20,7 +20,7 @@ test('Idempotent seeds preserve existing projects and items', () => {
   assert.match(db, /WHERE p\.slug='mp01-protecao-termica'/);
   const block = db.slice(db.indexOf('// NOVAMATRA / TERMOQUIMICA'));
   assert.equal((block.match(/ON CONFLICT\(slug\) DO NOTHING/g) || []).length, 2);
-  assert.equal((block.match(/AND NOT EXISTS\(/g) || []).length, 5);
+  assert.equal((block.match(/AND NOT EXISTS\s*\(/g) || []).length, 5);
   for (const slug of ['sterion-core','scan2cnc','arcvault-step','decreia']) {
     assert.ok(db.includes("'"+slug+"'"), 'Existing project unexpectedly missing: '+slug);
   }
