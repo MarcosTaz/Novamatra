@@ -1,0 +1,26 @@
+name: NOVAMATRA Termoquimica - isolamento
+on:
+  push:
+    paths:
+      - 'private-platform/db.mjs'
+      - 'private-platform/server.mjs'
+      - 'private-platform/tests/thermochemistry-seed.test.mjs'
+      - '.github/workflows/thermochemistry-isolation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verificar sintaxe
+        run: |
+          node --check private-platform/db.mjs
+          node --check private-platform/server.mjs
+          node --check private-platform/tests/thermochemistry-seed.test.mjs
+      - name: Verificar unidades independentes e preservacao
+        run: node --test private-platform/tests/thermochemistry-seed.test.mjs
