@@ -379,6 +379,15 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='f01-flame-sticks'
     AND NOT EXISTS (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='V0.8 — aquecimento bidimensional e verificação numérica')`);
 
+
+  // F-01 V0.10 — metadados apenas; resultados numericos inteiros no Drive privado.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','V0.10 — estudo comparativo de 3 a 7 faces',
+      'Estudo numerico de seccoes prismáticas P3, P4, P5, P6, P7 e referencias S1, S2e, S3, todas com area de 6 mm2: 48 cenarios de conducao FEM 2D e 110 ensaios de sensibilidade a orientacao, malha, passo temporal e aquecimento. No modelo termico envolvente, o prisma triangular tem o maior perimetro entre poligonos regulares e aquece primeiro; S2e e mais rapida mas sensivel a orientacao em aquecimento direcional. Modelo sem pirolise, combustao, chama ou emissoes; tempos de 180 C nao sao tempos reais de ignicao. Nenhuma geometria foi validada para produto. Documentos integrais em NOVAMATRA_PRIVADO/TERMOQUIMICA_F01_MP01/NOVAMATRA_F01_PAUS_MAGICOS_V10_3_5_6_7_FACES.zip.',
+      'Concluído com limites'
+    FROM nm_projects p WHERE p.slug='f01-flame-sticks'
+    AND NOT EXISTS (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='V0.10 — estudo comparativo de 3 a 7 faces')`);
+
   // F-01 V0.9: metadados internos mínimos; dados, modelos e pesquisa técnica no Drive privado.
   await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
     SELECT p.id,'marco','V0.9 — estudo de pirólise e sensibilidade 2D',
