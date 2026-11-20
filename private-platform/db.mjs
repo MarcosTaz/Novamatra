@@ -378,6 +378,14 @@ export async function initialize(){
       'Concluído com limites'
     FROM nm_projects p WHERE p.slug='f01-flame-sticks'
     AND NOT EXISTS (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='V0.8 — aquecimento bidimensional e verificação numérica')`);
+
+  // F-01 V0.9: metadados internos mínimos; dados, modelos e pesquisa técnica no Drive privado.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','V0.9 — estudo de pirólise e sensibilidade 2D',
+      'Simulação de sólido 2D: secagem, pseudocinética, carvão e voláteis brutos. 72 cenários, 40 pares de sensibilidade, malhas e passos temporais comparados, TGA virtual 5/10/20 K/min, 16 testes de software PASS. S2 pode libertar voláteis brutos mais rapidamente que S1 no contorno térmico assumido. Valores não calibrados fisicamente; sem chama real, guaiacol, aldeídos, PM, CO ou deposição calculados. Modelo completo e fontes no arquivo NOVAMATRA_PRIVADO/TERMOQUIMICA_F01_MP01/NOVAMATRA_F01_PAUS_MAGICOS_V09_ESTUDO_CIENTIFICO.zip. Sem validação de neutralidade aromática nem segurança de produto.',
+      'Concluído com limites'
+    FROM nm_projects p WHERE p.slug='f01-flame-sticks'
+    AND NOT EXISTS (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='V0.9 — estudo de pirólise e sensibilidade 2D')`);
   await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
     SELECT p.id,'marco','V0.1 — reserva metodologica independente',
       'Registado o ramo MP-01 com fontes, hipoteses e protocolos de calor, carbonizacao e fumo. Nao e um material protector validado. Os documentos integrais estao no arquivo privado e nao sao colocados no website institucional.',
