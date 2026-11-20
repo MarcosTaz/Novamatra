@@ -371,6 +371,13 @@ export async function initialize(){
       'Aberto'
     FROM nm_projects p WHERE p.slug='f01-flame-sticks'
     AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G1 — caracterizar amostras e validar fisica da chama')`);
+  // F-01 V0.8 — apenas evidência resumida; ZIP/relatórios completos exclusivamente no Drive privado.
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','V0.8 — aquecimento bidimensional e verificação numérica',
+      '27 cenarios 2D de aquecimento idealizado com entalpia de humidade, 54 comparacoes pareadas de sensibilidade e 7 verificacoes de campanha + 7 testes unitarios PASS. A geometria S2 aqueceu mais depressa no modelo assumido; nao e prova de chama, pirólise, emissao ou aroma preservado. Modelacao sem calibracao fisica. Documentacao integral em NOVAMATRA_PRIVADO/TERMOQUIMICA_F01_MP01/NOVAMATRA_F01_PAUS_MAGICOS_V08.zip.',
+      'Concluído com limites'
+    FROM nm_projects p WHERE p.slug='f01-flame-sticks'
+    AND NOT EXISTS (SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='V0.8 — aquecimento bidimensional e verificação numérica')`);
   await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
     SELECT p.id,'marco','V0.1 — reserva metodologica independente',
       'Registado o ramo MP-01 com fontes, hipoteses e protocolos de calor, carbonizacao e fumo. Nao e um material protector validado. Os documentos integrais estao no arquivo privado e nao sao colocados no website institucional.',
