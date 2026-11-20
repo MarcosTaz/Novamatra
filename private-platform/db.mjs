@@ -343,5 +343,46 @@ export async function initialize(){
     FROM nm_projects p WHERE p.slug='novamatra-lumicoaster'
       AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='P0.4.1 — validar construção low-cost')`);
 
+
+  // NOVAMATRA / TERMOQUIMICA — dois projetos independentes; apenas metadados.
+  // O repositorio e PUBLICO. Estudos, simulacoes, prototipos e ZIPs permanecem no arquivo privado.
+  // Insercoes idempotentes: nao substituem alteracoes efetuadas pelo proprietario.
+  await query(`INSERT INTO nm_projects(slug,title,summary,details,status,track,priority)
+    VALUES ('f01-flame-sticks','F-01 / FLAME STICKS',
+      'Investigacao de sticks de transferencia de chama sem cabeca quimica incorporada.',
+      'Ramo prioritario F-01. Arquivo cientifico V0.7: literatura sobre pirólise e emissoes, modelos exploratorios termicos e de combustao, protocolo de ensaios. A V0.6 tridimensional nao demonstrou convergencia; a V0.7 verificou apenas difusao termica 1D em cenarios idealizados e com propriedades hipoteticas. Nao existem chamas reais calibradas, medidas proprias de compostos aromaticos, comparacao fisica com butano, seguranca validada ou prototipo comercial. Documentacao e codigo integrais apenas no arquivo privado F01_MP01; nao publicar.',
+      'Investigação','Termoquímica / sticks','Alta')
+    ON CONFLICT(slug) DO NOTHING`);
+  await query(`INSERT INTO nm_projects(slug,title,summary,details,status,track,priority)
+    VALUES ('mp01-protecao-termica','MP-01 / MATERIAIS DE PROTECAO',
+      'Reserva cientifica independente para futura investigacao de protecao termica e contra incendio.',
+      'Ramo autonomo MP-01, sem formulacao ou produto definido. Preserva metodos e fontes selecionados do F-01: difusao termica, carbonizacao, emissao de fumos e avaliacao de materiais. Nao herda resultados de validacao do F-01. Nenhum material protetor, resistencia ao fogo, classificacao normativa, ensaio fisico, prototipo ou certificacao foi demonstrado. Arquivo tecnico reservado F01_MP01 em armazenamento privado; nao publicar.',
+      'Investigação','Materiais de proteção / reserva científica','Baixa')
+    ON CONFLICT(slug) DO NOTHING`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','V0.7 — arquivo cientifico e modelo termico verificado',
+      'Foi preservado o historico V0.4 a V0.6 e produzido o modelo V0.7 de difusao 1D com comparacao analitica. Verificacao matematica restrita ao modelo idealizado; nao comprova chama real, emissoes, neutralidade aromatica ou superioridade comercial. Documento tecnico completo mantido fora do repositorio publico.',
+      'Concluído com limites'
+    FROM nm_projects p WHERE p.slug='f01-flame-sticks'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='V0.7 — arquivo cientifico e modelo termico verificado')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','G1 — caracterizar amostras e validar fisica da chama',
+      'Caracterizar madeiras e lotes; medir propriedades e pirólise; estabelecer ensaios com captacao segura para chama, gases, particulas e deposicao; comparar com referencias comerciais. Demonstrar convergencia antes de usar CFD para selecionar geometrias. Sem contactos externos sem autorizacao.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='f01-flame-sticks'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G1 — caracterizar amostras e validar fisica da chama')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'marco','V0.1 — reserva metodologica independente',
+      'Registado o ramo MP-01 com fontes, hipoteses e protocolos de calor, carbonizacao e fumo. Nao e um material protector validado. Os documentos integrais estao no arquivo privado e nao sao colocados no website institucional.',
+      'Concluído com limites'
+    FROM nm_projects p WHERE p.slug='mp01-protecao-termica'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='V0.1 — reserva metodologica independente')`);
+  await query(`INSERT INTO nm_items(project_id,kind,title,body,state)
+    SELECT p.id,'tarefa','G1 — selecionar aplicacao e requisitos de protecao',
+      'Definir uso final, criterios de desempenho, materiais candidatos, ensaios e normas correspondentes. Sem transferencia automatica de desempenho do F-01 e sem alegacoes de protecao antes de ensaios proprios.',
+      'Aberto'
+    FROM nm_projects p WHERE p.slug='mp01-protecao-termica'
+    AND NOT EXISTS(SELECT 1 FROM nm_items i WHERE i.project_id=p.id AND i.title='G1 — selecionar aplicacao e requisitos de protecao')`);
+
 }
 export async function audit(operation, entity, id=''){await query('INSERT INTO nm_audit(operation,entity,entity_id) VALUES($1,$2,$3)',[operation,entity,String(id)]);} 
