@@ -81,9 +81,9 @@ h1{font-family:"Geist","Inter",Arial,sans-serif;font-weight:800;letter-spacing:-
         <svg class="axis-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 2 46 14 24 26 2 14zM2 24l22 12 22-12M2 34l22 12 22-12" stroke="currentColor" stroke-width="1.7"/></svg>
         <div><h2 data-i18n="axisTwoTitle">Desafios externos</h2><p data-i18n="axisTwoBody">Investigamos problemas apresentados por empresas e organizações.</p></div>
       </div>
-      <a class="cta" id="cta" href="mailto:contacto@novamatra.com?subject=NOVAMATRA%20%E2%80%94%20Apresentar%20um%20desafio">
+      <a class="cta" id="cta" href="mailto:geral@novamatra.com?subject=NOVAMATRA%20%E2%80%94%20Apresentar%20um%20desafio">
         <span class="cta-top"><span class="cta-title" data-i18n="cta">Tem um desafio a explorar?</span><svg class="cta-arrow" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M2 20h33m-12-12 12 12-12 12" stroke="#071000" stroke-width="2" stroke-linecap="square"/></svg></span>
-        <span class="cta-address">CONTACTO@NOVAMATRA.COM</span>
+        <span class="cta-address">GERAL@NOVAMATRA.COM</span>
       </a>
     </section>
   </main>
@@ -106,7 +106,7 @@ h1{font-family:"Geist","Inter",Arial,sans-serif;font-weight:800;letter-spacing:-
     document.title=t.title;
     document.getElementById('meta-description').content=t.meta;
     document.querySelector('.skip').textContent=t.skip;
-    document.getElementById('cta').href='mailto:contacto@novamatra.com?subject='+encodeURIComponent(t.subject);
+    document.getElementById('cta').href='mailto:geral@novamatra.com?subject='+encodeURIComponent(t.subject);
     for(const button of document.querySelectorAll('[data-lang]')) button.setAttribute('aria-pressed',button.dataset.lang===lang?'true':'false');
     try{history.replaceState(null,'',location.pathname+(lang==='pt'?'':'?lang='+lang)+location.hash);}catch(_){}
   }
